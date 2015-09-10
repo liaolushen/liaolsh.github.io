@@ -28,7 +28,7 @@
 
 
 
-  <meta name="keywords" content="Sublime," />
+  <meta name="keywords" content="Linux," />
 
 
 
@@ -37,25 +37,34 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="今天想用sublime安装插件时，发现了这个报错，于是开始网上查找问题解决方法，最后总算解决。
-
-问题原因其实原因非常简单，查看了sublime作者的github上的issue之后，我试了下登陆sublime的package资源网站https://packagecontrol.io/，发现果然是无法进入，开启代理之后成功打开，最终确定罪魁祸首是GFW。
-问题解决确定问题后，解决方法就有很多了。你也">
+<meta name="description" content="问题发现今天在给ubuntu系统安装ftp服务时，一件奇怪的事引起了我的注意。当我服务安装完成后，想要测试一下是否能控制服务，便输入如下命令：
+service vsftpd restart
+它返回的信息是：
+stop: Unknown job: vsftpd
+start: Unknown job: vsftpd
+另外甚至在/etc/init.d/文件夹中都没有发现vsftpd的启动脚本。
+之后我g">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Sublime Text3 报错 There are no packages available for installation">
-<meta property="og:url" content="http://liaolushen.github.io/2015/09/07/Sublime-Text3-报错-There-are-no-packages-available-for-installation/index.html">
+<meta property="og:title" content="Linux系统下/etc/init/和/etc/init.d/的区别">
+<meta property="og:url" content="http://liaolushen.github.io/2015/09/11/Linux系统下-etc-init-和-etc-init-d-的区别/index.html">
 <meta property="og:site_name" content="平凡之路">
-<meta property="og:description" content="今天想用sublime安装插件时，发现了这个报错，于是开始网上查找问题解决方法，最后总算解决。
-
-问题原因其实原因非常简单，查看了sublime作者的github上的issue之后，我试了下登陆sublime的package资源网站https://packagecontrol.io/，发现果然是无法进入，开启代理之后成功打开，最终确定罪魁祸首是GFW。
-问题解决确定问题后，解决方法就有很多了。你也">
-<meta property="og:updated_time" content="2015-09-07T03:57:35.000Z">
+<meta property="og:description" content="问题发现今天在给ubuntu系统安装ftp服务时，一件奇怪的事引起了我的注意。当我服务安装完成后，想要测试一下是否能控制服务，便输入如下命令：
+service vsftpd restart
+它返回的信息是：
+stop: Unknown job: vsftpd
+start: Unknown job: vsftpd
+另外甚至在/etc/init.d/文件夹中都没有发现vsftpd的启动脚本。
+之后我g">
+<meta property="og:updated_time" content="2015-09-10T18:40:44.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Sublime Text3 报错 There are no packages available for installation">
-<meta name="twitter:description" content="今天想用sublime安装插件时，发现了这个报错，于是开始网上查找问题解决方法，最后总算解决。
-
-问题原因其实原因非常简单，查看了sublime作者的github上的issue之后，我试了下登陆sublime的package资源网站https://packagecontrol.io/，发现果然是无法进入，开启代理之后成功打开，最终确定罪魁祸首是GFW。
-问题解决确定问题后，解决方法就有很多了。你也">
+<meta name="twitter:title" content="Linux系统下/etc/init/和/etc/init.d/的区别">
+<meta name="twitter:description" content="问题发现今天在给ubuntu系统安装ftp服务时，一件奇怪的事引起了我的注意。当我服务安装完成后，想要测试一下是否能控制服务，便输入如下命令：
+service vsftpd restart
+它返回的信息是：
+stop: Unknown job: vsftpd
+start: Unknown job: vsftpd
+另外甚至在/etc/init.d/文件夹中都没有发现vsftpd的启动脚本。
+之后我g">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -65,7 +74,7 @@
   };
 </script>
 
-  <title> Sublime Text3 报错 There are no packages available for installation | 平凡之路 </title>
+  <title> Linux系统下/etc/init/和/etc/init.d/的区别 | 平凡之路 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -172,7 +181,7 @@
           
           
             
-              Sublime Text3 报错 There are no packages available for installation
+              Linux系统下/etc/init/和/etc/init.d/的区别
             
           
         </h1>
@@ -181,8 +190,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-09-07T01:18:36+08:00" content="2015-09-07">
-            2015-09-07
+          <time itemprop="dateCreated" datetime="2015-09-11T01:37:28+08:00" content="2015-09-11">
+            2015-09-11
           </time>
         </span>
 
@@ -191,8 +200,8 @@
             &nbsp; | &nbsp; 分类于
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/工具使用/" itemprop="url" rel="index">
-                  <span itemprop="name">工具使用</span>
+                <a href="/categories/服务器配置/" itemprop="url" rel="index">
+                  <span itemprop="name">服务器配置</span>
                 </a>
               </span>
 
@@ -215,14 +224,42 @@
       
 
       
-        <span itemprop="articleBody"><blockquote>
-<p>今天想用sublime安装插件时，发现了这个报错，于是开始网上查找问题解决方法，最后总算解决。</p>
+        <span itemprop="articleBody"><h2 id="问题发现">问题发现</h2><p>今天在给ubuntu系统安装ftp服务时，一件奇怪的事引起了我的注意。当我服务安装完成后，想要测试一下是否能控制服务，便输入如下命令：</p>
+<pre><code><span class="title">service</span> vsftpd restart
+</code></pre><p>它返回的信息是：</p>
+<pre><code><span class="string">stop:</span> Unknown <span class="string">job:</span> vsftpd
+<span class="string">start:</span> Unknown <span class="string">job:</span> vsftpd
+</code></pre><p>另外甚至在<b>/etc/init.d/文件夹</b>中都没有发现vsftpd的启动脚本。</p>
+<p>之后我google后在service命令前加了sudo，命令如下:</p>
+<pre><code><span class="title">sudo</span> service vsftpd restart
+</code></pre><p>结果成功运行。</p>
+<p>现在虽然ftp能够正常的启动和终止，但是另一个疑问没有解决，service不是调用/etc/init.d/文件夹里的启动脚本的吗，然而/etc/init.d/中并没有vsftpd这个脚本，为什么还能够运行？我通过man命令查看了一下service指令的信息，果然发现了一些端倪，里面是这样讲的</p>
+<blockquote>
+<p>The  SCRIPT  parameter specifies a System V init script, located in /etc/init.d/SCRIPT, or the name of an upstart job in /etc/init.</p>
 </blockquote>
-<h2 id="问题原因">问题原因</h2><p>其实原因非常简单，查看了sublime作者的github上的issue之后，我试了下登陆sublime的package资源网站<a href="https://packagecontrol.io/" target="_blank" rel="external">https://packagecontrol.io/</a>，发现果然是无法进入，开启代理之后成功打开，最终确定罪魁祸首是<a href="https://zh.wikipedia.org/wiki/%E9%98%B2%E7%81%AB%E9%95%BF%E5%9F%8E" target="_blank" rel="external">GFW</a>。</p>
-<h2 id="问题解决">问题解决</h2><p>确定问题后，解决方法就有很多了。你也改代理之类的，网上教程很多。我的方法是设置自己的代理上网。<br>在preferences-&gt;Setting-User加上如下语句</p>
-<pre><code><span class="string">"http_proxy"</span>: <span class="string">"http://127.0.0.1:1080"</span>
-</code></pre><p>这里改成你自己的上网代理端口即可。</p>
-</span>
+<p>于是我在/etc/init文件夹中果然发现了vsftpd.conf这个文件。但是又有奇怪的事情出现了，查看/etc/init/文件夹中许多文件是和/etc/init.d/文件夹中重复的，比如mysql。那么这两个文件夹有什么区别吗？</p>
+<h2 id="寻求答案">寻求答案</h2><p>这种东西当然是寻求google的帮助最快了。果然很快就找到了一位外国大神的答案。他是这么说的：</p>
+<blockquote>
+<p>/etc/init.d contains scripts used by the System V init tools (SysVinit). This is the traditional service management package for Linux, containing the init program (the first process that is run when the kernel has finished initializing¹) as well as some infrastructure to start and stop services and configure them. Specifically, files in /etc/init.d are shell scripts that respond to start, stop, restart, and (when supported) reload commands to manage a particular service. These scripts can be invoked directly or (most commonly) via some other trigger (typically the presence of a symbolic link in /etc/rc?.d/).</p>
+<p>/etc/init contains configuration files used by Upstart. Upstart is a young service management package championed by Ubuntu. Files in /etc/init are configuration files telling Upstart how and when to start, stop, reload the configuration, or query the status of a service. As of lucid, Ubuntu is transitioning from SysVinit to Upstart, which explains why many services come with SysVinit scripts even though Upstart configuration files are preferred. In fact, the SysVinit scripts are processed by a compatibility layer in Upstart.</p>
+</blockquote>
+<p>简而言之，/etc/init.d/就是旧时代liunx的用法，/etc/init/是现在Ubuntu的提倡并一步步转型的用法。为了平缓过渡，便让service命令可以同时寻找到两个文件夹。</p>
+<h2 id="问题思考">问题思考</h2><p>问题到这貌似解决了，但是感觉还差些什么。</p>
+<p>在查看service命令时，是这么介绍的：</p>
+<blockquote>
+<p>service - run a System V init script</p>
+</blockquote>
+<p>没错，service这个命令一开始就是用在SysVinit上的，为了支持Upstart才额外增加了启动/etc/init/文件夹，那么如何使用Upstart启动服务呢。最后查看Upstart的文档，当我要重启mysql时。我只需要输入如下命令：</p>
+<pre><code><span class="title">sudo</span> restart mysql
+</code></pre><p>而且Upstart的启动配置文件确实简单很多。</p>
+<h2 id="问题总结">问题总结</h2><p>其实这两个文件夹的区别也就是服务启动方式的区别，目前有三种启动方式。(例如我启动mysql服务)</p>
+<p>1.只从/etc/init.d/文件夹启动：</p>
+<pre><code>/etc/init.d/mysql <span class="built_in">start</span>
+</code></pre><p>2.只从/etc/init/文件夹启动(Ubuntu提倡)：</p>
+<pre><code>sudo <span class="built_in">start</span> mysql
+</code></pre><p>3.从两个文件夹中启动：</p>
+<pre><code>service <span class="built_in">start</span> mysql
+</code></pre></span>
       
     </div>
 
@@ -230,7 +267,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Sublime/" rel="tag">#Sublime</a>
+            <a href="/tags/Linux/" rel="tag">#Linux</a>
           
         </div>
       
@@ -239,11 +276,11 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/09/07/如何在Ubunutu配置Apache虚拟主机/" rel="prev">Ubunutu下Apache配置私人目录</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/09/07/如何在Ubunutu配置Apache虚拟主机/" rel="next">Ubunutu下Apache配置私人目录</a>
             
           </div>
         </div>
@@ -347,7 +384,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题原因"><span class="nav-number">1.</span> <span class="nav-text">问题原因</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题解决"><span class="nav-number">2.</span> <span class="nav-text">问题解决</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题发现"><span class="nav-number">1.</span> <span class="nav-text">问题发现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#寻求答案"><span class="nav-number">2.</span> <span class="nav-text">寻求答案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题思考"><span class="nav-number">3.</span> <span class="nav-text">问题思考</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题总结"><span class="nav-number">4.</span> <span class="nav-text">问题总结</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
