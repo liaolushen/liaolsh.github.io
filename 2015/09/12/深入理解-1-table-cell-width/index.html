@@ -28,7 +28,7 @@
 
 
 
-  <meta name="keywords" content="Apache,Ubuntu," />
+  <meta name="keywords" content="CSS," />
 
 
 
@@ -37,40 +37,37 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="在Ubuntu中apache的默认目录为/var/www/html/,而该目录的操作是需要root权限的。能不能额外增加端口，然后工作目录设置为自己的私人目录呢？当然是可以的！
+<meta name="description" content="今天在写页面时遇到一个有趣的前端问题，拿出来分享一下。
 
-添加端口打开/etc/apache2/ports.conf
-sudo vi /etc/apache2/ports.conf
-添加一个端口，如下所示：
-Listen 80
-Listen 8080
-
-&amp;lt;IfModule">
+问题描述今天在使用Bootstrap给页面添加底部导航栏时，需要在手机下也使导航栏呈现水平排列的效果。最后在网上查找解决方法是，看到这样一个解决方法：
+.nav-justified &amp;gt; li {
+    display: table-cell; 
+    width: 1%;
+}
+而且确实奏效了，但是代码很有意思，我便另外试了试，如果">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ubunutu下Apache配置私人目录">
-<meta property="og:url" content="http://liaolushen.github.io/2015/09/07/如何在Ubunutu配置Apache虚拟主机/index.html">
+<meta property="og:title" content="深入理解 1% table-cell width">
+<meta property="og:url" content="http://liaolushen.github.io/2015/09/12/深入理解-1-table-cell-width/index.html">
 <meta property="og:site_name" content="平凡之路">
-<meta property="og:description" content="在Ubuntu中apache的默认目录为/var/www/html/,而该目录的操作是需要root权限的。能不能额外增加端口，然后工作目录设置为自己的私人目录呢？当然是可以的！
+<meta property="og:description" content="今天在写页面时遇到一个有趣的前端问题，拿出来分享一下。
 
-添加端口打开/etc/apache2/ports.conf
-sudo vi /etc/apache2/ports.conf
-添加一个端口，如下所示：
-Listen 80
-Listen 8080
-
-&amp;lt;IfModule">
-<meta property="og:updated_time" content="2015-09-10T19:04:25.000Z">
+问题描述今天在使用Bootstrap给页面添加底部导航栏时，需要在手机下也使导航栏呈现水平排列的效果。最后在网上查找解决方法是，看到这样一个解决方法：
+.nav-justified &amp;gt; li {
+    display: table-cell; 
+    width: 1%;
+}
+而且确实奏效了，但是代码很有意思，我便另外试了试，如果">
+<meta property="og:updated_time" content="2015-09-12T14:04:36.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ubunutu下Apache配置私人目录">
-<meta name="twitter:description" content="在Ubuntu中apache的默认目录为/var/www/html/,而该目录的操作是需要root权限的。能不能额外增加端口，然后工作目录设置为自己的私人目录呢？当然是可以的！
+<meta name="twitter:title" content="深入理解 1% table-cell width">
+<meta name="twitter:description" content="今天在写页面时遇到一个有趣的前端问题，拿出来分享一下。
 
-添加端口打开/etc/apache2/ports.conf
-sudo vi /etc/apache2/ports.conf
-添加一个端口，如下所示：
-Listen 80
-Listen 8080
-
-&amp;lt;IfModule">
+问题描述今天在使用Bootstrap给页面添加底部导航栏时，需要在手机下也使导航栏呈现水平排列的效果。最后在网上查找解决方法是，看到这样一个解决方法：
+.nav-justified &amp;gt; li {
+    display: table-cell; 
+    width: 1%;
+}
+而且确实奏效了，但是代码很有意思，我便另外试了试，如果">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -80,7 +77,7 @@ Listen 8080
   };
 </script>
 
-  <title> Ubunutu下Apache配置私人目录 | 平凡之路 </title>
+  <title> 深入理解 1% table-cell width | 平凡之路 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -187,7 +184,7 @@ Listen 8080
           
           
             
-              Ubunutu下Apache配置私人目录
+              深入理解 1% table-cell width
             
           
         </h1>
@@ -196,8 +193,8 @@ Listen 8080
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-09-07T12:00:34+08:00" content="2015-09-07">
-            2015-09-07
+          <time itemprop="dateCreated" datetime="2015-09-12T16:18:37+08:00" content="2015-09-12">
+            2015-09-12
           </time>
         </span>
 
@@ -206,8 +203,8 @@ Listen 8080
             &nbsp; | &nbsp; 分类于
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/服务器配置/" itemprop="url" rel="index">
-                  <span itemprop="name">服务器配置</span>
+                <a href="/categories/前端学习/" itemprop="url" rel="index">
+                  <span itemprop="name">前端学习</span>
                 </a>
               </span>
 
@@ -231,30 +228,29 @@ Listen 8080
 
       
         <span itemprop="articleBody"><blockquote>
-<p>在Ubuntu中apache的默认目录为/var/www/html/,而该目录的操作是需要root权限的。能不能额外增加端口，然后工作目录设置为自己的私人目录呢？当然是可以的！</p>
+<p>今天在写页面时遇到一个有趣的前端问题，拿出来分享一下。</p>
 </blockquote>
-<h2 id="添加端口">添加端口</h2><p>打开/etc/apache2/ports.conf</p>
-<pre><code>sudo <span class="keyword">vi</span> /etc/apache2/ports.<span class="keyword">conf</span>
-</code></pre><p>添加一个端口，如下所示：</p>
-<pre><code><span class="keyword"><span class="common">Listen</span></span> 80
-<span class="keyword"><span class="common">Listen</span></span> 8080
-
-<span class="tag">&lt;IfModule ssl_module&gt;</span>
-    <span class="keyword"><span class="common">Listen</span></span> 443
-<span class="tag">&lt;/IfModule&gt;</span>
-
-<span class="tag">&lt;IfModule mod_gnutls.c&gt;</span>
-    <span class="keyword"><span class="common">Listen</span></span> 443
-<span class="tag">&lt;/IfModule&gt;</span>
-</code></pre><h2 id="添加配置文件">添加配置文件</h2><p>在/etc/apache2/sites-avavilble目录下添加一个配置文件。可以直接复制该目录下的000-default.conf文件：</p>
-<pre><code>sudo cp <span class="regexp">/etc/</span>apache2<span class="regexp">/sites-available/</span><span class="number">000</span>-<span class="keyword">default</span>.conf <span class="regexp">/etc/</span>apache2<span class="regexp">/sites-available/my</span>.conf
-</code></pre><p>VirtualHost <em>:80改为VirtualHost </em>:8080</p>
-<p>DocumentRoot /var/www/html 改为自己的目录</p>
-<h2 id="使配置文件生效">使配置文件生效</h2><p>将my.conf 软链到sites-enabled</p>
-<pre><code>sudo ln -s <span class="regexp">/etc/</span>apache2<span class="regexp">/sites-available/my</span>.conf <span class="regexp">/etc/</span>apache2<span class="regexp">/sites-enabled/my</span>.conf
-</code></pre><p>重启apache</p>
-<pre><code><span class="title">sudo</span> service apache2 restart
-</code></pre></span>
+<h2 id="问题描述">问题描述</h2><p>今天在使用Bootstrap给页面添加底部导航栏时，需要在手机下也使导航栏呈现水平排列的效果。最后在网上查找解决方法是，看到这样一个解决方法：</p>
+<pre><code><span class="class">.nav-justified</span> &gt; <span class="tag">li</span> <span class="rules">{
+    <span class="rule"><span class="attribute">display</span>:<span class="value"> table-cell</span></span>; 
+    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">1%</span></span></span>;
+}</span>
+</code></pre><p>而且确实奏效了，但是代码很有意思，我便另外试了试，如果width为百分数，发现随着width值的改变，。这也算前端的一个hack方法，也有许多人已经研究过，推荐一个别人写的网站，可以调试这个方法。<a href="http://codepen.io/ld0rman/pen/FCiLh" target="_blank" rel="external">http://codepen.io/ld0rman/pen/FCiLh</a></p>
+<h2 id="问题理解">问题理解</h2><p>在这里，我在查看了网上的资料后也讲讲我自己的理解。</p>
+<p>实际上，有关表的宽度计算是件挺麻烦的事情，这也不是我们的重点，之间先来看看我把table-cell的width设为1%，为什么会出现这样的结果好了。</p>
+<p>这里我们利用”display: table-cell”使得每个li元素变成了一个表格中的单元格，注意到我们并没有这个单元格添加外层的表格布局，但是实际上浏览器会默认添加一个隐藏的table，它默认的布局是”table-layout: auto”，所以这个表格的大小是根据单元格的大小确定的。有前端基础的都知道，表格中每个单元格是有自己的最小宽度的，这样我们设置了”width: 1%”实际上是设置table的大小为单元格的最小宽度的100倍。但是很明显，表格是不可能这么宽的，这里可以理解为让表格的宽度尽可能的宽。而且根据单元格必须填满表格一行的特性，就自然呈现出这样的效果。</p>
+<p>为了验证，你把width设置为10%时，你会发现表格变小了，也是因为表格大小变成了最小单元格的宽度的10倍，这样也可以解释了</p>
+<p>另外如果我把width设置为100%时，会发现第一个单元格非常大然而，其他的也还是存在，但是都被压缩了。我是这样理解的——首先第一个单元格的宽度为100%的话，那么就是表格的大小了，但是这一行还有其他的单元格存在，它是不可能达到100%的，所以第一个尽可能宽，而其他的也能有最小宽度。</p>
+<h2 id="问题总结">问题总结</h2><p>根据width的值不同，表格会有不同的表现，可以分成两种情况。这里我们需要先计算width =（表格的最大宽度）×width的结果</p>
+<ul>
+<li>计算出的width小于单元格最小宽度</li>
+</ul>
+<p>这种情况下就是以单元格的最小宽度为width，再计算表格应有的大小，再分别各个单元格</p>
+<ul>
+<li>计算出的width大于单元格最小宽度</li>
+</ul>
+<p>这种情况下就从第一个单元格起尽量满足它的宽度，但是要保证后面的单元至少有它的最小宽度</p>
+</span>
       
     </div>
 
@@ -262,9 +258,7 @@ Listen 8080
       
         <div class="post-tags">
           
-            <a href="/tags/Apache/" rel="tag">#Apache</a>
-          
-            <a href="/tags/Ubuntu/" rel="tag">#Ubuntu</a>
+            <a href="/tags/CSS/" rel="tag">#CSS</a>
           
         </div>
       
@@ -273,13 +267,11 @@ Listen 8080
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/09/11/Linux系统下-etc-init-和-etc-init-d-的区别/" rel="prev">Linux系统下/etc/init/和/etc/init.d/的区别</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/09/07/Sublime-Text3-报错-There-are-no-packages-available-for-installation/" rel="next">Sublime Text3 报错 There are no packages available for installation</a>
+              <a href="/2015/09/11/Linux系统下-etc-init-和-etc-init-d-的区别/" rel="next">Linux系统下/etc/init/和/etc/init.d/的区别</a>
             
           </div>
         </div>
@@ -383,7 +375,7 @@ Listen 8080
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#添加端口"><span class="nav-number">1.</span> <span class="nav-text">添加端口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加配置文件"><span class="nav-number">2.</span> <span class="nav-text">添加配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使配置文件生效"><span class="nav-number">3.</span> <span class="nav-text">使配置文件生效</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题描述"><span class="nav-number">1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题理解"><span class="nav-number">2.</span> <span class="nav-text">问题理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题总结"><span class="nav-number">3.</span> <span class="nav-text">问题总结</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
