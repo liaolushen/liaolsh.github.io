@@ -164,6 +164,94 @@
           
           
             
+              <a class="post-title-link" href="/2015/09/13/在Ubuntu14-04下安装nwjs/" itemprop="url">
+                在Ubuntu14.04下安装nwjs
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-09-13T23:05:29+08:00" content="2015-09-13">
+            2015-09-13
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/Ubuntu的日常/" itemprop="url" rel="index">
+                  <span itemprop="name">Ubuntu的日常</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><blockquote>
+<p>原本我是想直接用npm来安装nwjs的，很不幸不知是不是防火墙的原因，最终失败了，只能手动安装。</p>
+</blockquote>
+<h2 id="下载安装包">下载安装包</h2><pre><code>sudo wget -c <span class="string">http:</span><span class="comment">//dl.nwjs.io/v0.12.3/nwjs-v0.12.3-linux-x64.tar.gz</span>
+</code></pre><p>如果失败可能是网站被墙，可以打开代理下载</p>
+<h2 id="解压到本地">解压到本地</h2><pre><code><span class="tag">sudo</span> <span class="tag">-xvf</span> <span class="tag">nwjs-v0</span><span class="class">.12</span><span class="class">.3-linux-x64</span><span class="class">.tar</span><span class="class">.gz</span>
+</code></pre><h2 id="放到合适目录">放到合适目录</h2><p>我个人喜好将第三方软件放到/opt/文件夹中</p>
+<pre><code>sudo mv nwjs-v0<span class="number">.12</span><span class="number">.3</span>-linux-x64 /opt/nwjs
+</code></pre><h2 id="添加路径">添加路径</h2><p>创建一个在/etc/profile.d/下创建新的bash文件</p>
+<pre><code>sudo <span class="keyword">vim</span> /etc/<span class="keyword">profile</span>.<span class="keyword">d</span>/nwjs.<span class="keyword">sh</span>
+</code></pre><p>在里面添加nwjs的路径</p>
+<pre><code>export <span class="constant">PATH=</span><span class="variable">$PATH</span><span class="symbol">:/opt/nwjs</span>
+</code></pre></span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2015/09/12/深入理解-1-table-cell-width/" itemprop="url">
                 深入理解 1% table-cell width
               </a>
@@ -580,21 +668,21 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-count">4</span>
               <span class="site-state-item-name">分类</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
