@@ -250,7 +250,7 @@ The key's randomart image is:
 <pre><code>test<span class="variable">@liaolushen</span>-<span class="constant">ThinkPad</span>-<span class="constant">E450</span><span class="symbol">:~</span><span class="variable">$ </span>ls .ssh/
 id_rsa  id_rsa.pub
 </code></pre><p>这里id_rsa.pub就是你的公钥了，id_rsa则是你的私钥。</p>
-<h3 id="第二步：远程机器放置公钥">第二步：远程机器放置公钥</h3><p>公钥成功生成后，下一步自然就是把它放到你的远程机器上面去了。</p>
+<h3 id="第二步：远程机器放置公钥">第二步：远程机器放置公钥</h3><p>公钥成功生成后，下一步自然就是把它放到你的远程机器上面去了。这里我们把公钥添加到远程机器的authorized_keys文件中，在这个文件中，每个公钥占据一行。所以如果远程机器上并没有其他人的公钥，则直接如下传输即可，但是如果已经有了其他人的公钥，那么就只能手动添加了。</p>
 <pre><code>test<span class="variable">@liaolushen</span>-<span class="constant">ThinkPad</span>-<span class="constant">E450</span><span class="symbol">:~</span><span class="variable">$ </span>scp .ssh/id_rsa.pub root<span class="variable">@120</span>.<span class="number">24.74</span>.<span class="number">135</span><span class="symbol">:~/</span>.ssh/authorized_keys
 </code></pre><h3 id="第三步：实现无密码登陆">第三步：实现无密码登陆</h3><p>现在就来试一试</p>
 <pre><code>test<span class="variable">@liaolushen</span>-<span class="constant">ThinkPad</span>-<span class="constant">E450</span><span class="symbol">:~</span><span class="variable">$ </span>ssh root<span class="variable">@120</span>.<span class="number">24.74</span>.<span class="number">135</span>
