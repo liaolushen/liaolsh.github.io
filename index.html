@@ -343,6 +343,10 @@ id_rsa  id_rsa.pub
 <pre><code>sudo <span class="keyword">vim</span> /etc/<span class="keyword">profile</span>.<span class="keyword">d</span>/nwjs.<span class="keyword">sh</span>
 </code></pre><p>在里面添加nwjs的路径</p>
 <pre><code>export <span class="constant">PATH=</span><span class="variable">$PATH</span><span class="symbol">:/opt/nwjs</span>
+</code></pre><h2 id="检测是否成功">检测是否成功</h2><p>这里你可以在命令行输入nw，如果成功打开nwjs那就成功了，有时我发现有的会报如下错误</p>
+<pre><code><span class="string">bash:</span> <span class="regexp">/opt/</span>nwjs/<span class="string">nw:</span> Permission denied
+</code></pre><p>这是因为没有nw的执行文件没有添加可执行属性，执行如下命令即可：</p>
+<pre><code><span class="label">sudo</span> chmod +x /<span class="preprocessor">opt</span>/nwjs/nw
 </code></pre></span>
         
       

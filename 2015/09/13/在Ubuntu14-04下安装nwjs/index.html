@@ -53,7 +53,7 @@
 如果失败可能是网站被墙，可以打开代理下载
 解压到本地sudo -xvf nwjs-v0.12.3-linux-x64.tar.gz
 放到合适目录我个人喜">
-<meta property="og:updated_time" content="2015-09-17T16:16:16.000Z">
+<meta property="og:updated_time" content="2015-09-23T01:06:55.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在Ubuntu14.04下安装nwjs">
 <meta name="twitter:description" content="原本我是想直接用npm来安装nwjs的，很不幸不知是不是防火墙的原因，最终失败了，只能手动安装。
@@ -233,6 +233,10 @@
 <pre><code>sudo <span class="keyword">vim</span> /etc/<span class="keyword">profile</span>.<span class="keyword">d</span>/nwjs.<span class="keyword">sh</span>
 </code></pre><p>在里面添加nwjs的路径</p>
 <pre><code>export <span class="constant">PATH=</span><span class="variable">$PATH</span><span class="symbol">:/opt/nwjs</span>
+</code></pre><h2 id="检测是否成功">检测是否成功</h2><p>这里你可以在命令行输入nw，如果成功打开nwjs那就成功了，有时我发现有的会报如下错误</p>
+<pre><code><span class="string">bash:</span> <span class="regexp">/opt/</span>nwjs/<span class="string">nw:</span> Permission denied
+</code></pre><p>这是因为没有nw的执行文件没有添加可执行属性，执行如下命令即可：</p>
+<pre><code><span class="label">sudo</span> chmod +x /<span class="preprocessor">opt</span>/nwjs/nw
 </code></pre></span>
       
     </div>
@@ -360,7 +364,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#下载安装包"><span class="nav-number">1.</span> <span class="nav-text">下载安装包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解压到本地"><span class="nav-number">2.</span> <span class="nav-text">解压到本地</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#放到合适目录"><span class="nav-number">3.</span> <span class="nav-text">放到合适目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加路径"><span class="nav-number">4.</span> <span class="nav-text">添加路径</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#下载安装包"><span class="nav-number">1.</span> <span class="nav-text">下载安装包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解压到本地"><span class="nav-number">2.</span> <span class="nav-text">解压到本地</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#放到合适目录"><span class="nav-number">3.</span> <span class="nav-text">放到合适目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加路径"><span class="nav-number">4.</span> <span class="nav-text">添加路径</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#检测是否成功"><span class="nav-number">5.</span> <span class="nav-text">检测是否成功</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
