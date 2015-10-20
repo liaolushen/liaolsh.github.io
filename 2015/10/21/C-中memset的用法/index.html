@@ -28,7 +28,7 @@
 
 
 
-  <meta name="keywords" content="CSS," />
+  <meta name="keywords" content="Hexo,next" />
 
 
 
@@ -37,37 +37,28 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="今天在写页面时遇到一个有趣的前端问题，拿出来分享一下。
+<meta name="description" content="最近沉浸在刷西西里算法题中不可自拔，其中经常有用到memset这个函数，用它来给数组进行清零实在有些方便，但是有一次我尝试使用这个函数给int数组赋值时却缺出现奇怪的错误，这时我发现虽然我有经常用这个函数，但是对它的用法一无所知，于是在次重新研究下这个函数的用法。
 
-问题描述今天在使用Bootstrap给页面添加底部导航栏时，需要在手机下也使导航栏呈现水平排列的效果。最后在网上查找解决方法是，看到这样一个解决方法：
-.nav-justified &amp;gt; li {
-    display: table-cell; 
-    width: 1%;
-}
-而且确实奏效了，但是代码很有意思，我便另外试了试，如果">
+错误先行就先讲讲我用这个函数给数组赋值时出现的错误先吧，下面是出错代码：
+#include &amp;lt;iostream&amp;gt;
+#in">
 <meta property="og:type" content="article">
-<meta property="og:title" content="深入理解 1% table-cell width">
-<meta property="og:url" content="http://liaolushen.github.io/2015/09/12/深入理解-1-table-cell-width/index.html">
+<meta property="og:title" content="C++中memset的用法">
+<meta property="og:url" content="http://liaolushen.github.io/2015/10/21/C-中memset的用法/index.html">
 <meta property="og:site_name" content="平凡之路">
-<meta property="og:description" content="今天在写页面时遇到一个有趣的前端问题，拿出来分享一下。
+<meta property="og:description" content="最近沉浸在刷西西里算法题中不可自拔，其中经常有用到memset这个函数，用它来给数组进行清零实在有些方便，但是有一次我尝试使用这个函数给int数组赋值时却缺出现奇怪的错误，这时我发现虽然我有经常用这个函数，但是对它的用法一无所知，于是在次重新研究下这个函数的用法。
 
-问题描述今天在使用Bootstrap给页面添加底部导航栏时，需要在手机下也使导航栏呈现水平排列的效果。最后在网上查找解决方法是，看到这样一个解决方法：
-.nav-justified &amp;gt; li {
-    display: table-cell; 
-    width: 1%;
-}
-而且确实奏效了，但是代码很有意思，我便另外试了试，如果">
-<meta property="og:updated_time" content="2015-09-12T14:04:36.000Z">
+错误先行就先讲讲我用这个函数给数组赋值时出现的错误先吧，下面是出错代码：
+#include &amp;lt;iostream&amp;gt;
+#in">
+<meta property="og:updated_time" content="2015-10-20T17:36:23.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="深入理解 1% table-cell width">
-<meta name="twitter:description" content="今天在写页面时遇到一个有趣的前端问题，拿出来分享一下。
+<meta name="twitter:title" content="C++中memset的用法">
+<meta name="twitter:description" content="最近沉浸在刷西西里算法题中不可自拔，其中经常有用到memset这个函数，用它来给数组进行清零实在有些方便，但是有一次我尝试使用这个函数给int数组赋值时却缺出现奇怪的错误，这时我发现虽然我有经常用这个函数，但是对它的用法一无所知，于是在次重新研究下这个函数的用法。
 
-问题描述今天在使用Bootstrap给页面添加底部导航栏时，需要在手机下也使导航栏呈现水平排列的效果。最后在网上查找解决方法是，看到这样一个解决方法：
-.nav-justified &amp;gt; li {
-    display: table-cell; 
-    width: 1%;
-}
-而且确实奏效了，但是代码很有意思，我便另外试了试，如果">
+错误先行就先讲讲我用这个函数给数组赋值时出现的错误先吧，下面是出错代码：
+#include &amp;lt;iostream&amp;gt;
+#in">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -77,7 +68,7 @@
   };
 </script>
 
-  <title> 深入理解 1% table-cell width | 平凡之路 </title>
+  <title> C++中memset的用法 | 平凡之路 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -184,7 +175,7 @@
           
           
             
-              深入理解 1% table-cell width
+              C++中memset的用法
             
           
         </h1>
@@ -193,8 +184,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-09-12T16:18:37+08:00" content="2015-09-12">
-            2015-09-12
+          <time itemprop="dateCreated" datetime="2015-10-21T00:50:43+08:00" content="2015-10-21">
+            2015-10-21
           </time>
         </span>
 
@@ -203,8 +194,8 @@
             &nbsp; | &nbsp; 分类于
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/前端学习/" itemprop="url" rel="index">
-                  <span itemprop="name">前端学习</span>
+                <a href="/categories/C-基础/" itemprop="url" rel="index">
+                  <span itemprop="name">C++基础</span>
                 </a>
               </span>
 
@@ -228,52 +219,48 @@
 
       
         <span itemprop="articleBody"><blockquote>
-<p>今天在写页面时遇到一个有趣的前端问题，拿出来分享一下。</p>
+<p>最近沉浸在刷西西里算法题中不可自拔，其中经常有用到memset这个函数，用它来给数组进行清零实在有些方便，但是有一次我尝试使用这个函数给int数组赋值时却缺出现奇怪的错误，这时我发现虽然我有经常用这个函数，但是对它的用法一无所知，于是在次重新研究下这个函数的用法。</p>
 </blockquote>
-<h2 id="问题描述">问题描述</h2><p>今天在使用Bootstrap给页面添加底部导航栏时，需要在手机下也使导航栏呈现水平排列的效果。最后在网上查找解决方法是，看到这样一个解决方法：</p>
-<pre><code><span class="class">.nav-justified</span> &gt; <span class="tag">li</span> <span class="rules">{
-    <span class="rule"><span class="attribute">display</span>:<span class="value"> table-cell</span></span>; 
-    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">1%</span></span></span>;
-}</span>
-</code></pre><p>而且确实奏效了，但是代码很有意思，我便另外试了试，如果width为百分数，发现随着width值的改变，。这也算前端的一个hack方法，也有许多人已经研究过，推荐一个别人写的网站，可以调试这个方法。<a href="http://codepen.io/ld0rman/pen/FCiLh" target="_blank" rel="external">http://codepen.io/ld0rman/pen/FCiLh</a></p>
-<h2 id="问题理解">问题理解</h2><p>在这里，我在查看了网上的资料后也讲讲我自己的理解。</p>
-<p>实际上，有关表的宽度计算是件挺麻烦的事情，这也不是我们的重点，之间先来看看我把table-cell的width设为1%，为什么会出现这样的结果好了。</p>
-<p>这里我们利用”display: table-cell”使得每个li元素变成了一个表格中的单元格，注意到我们并没有这个单元格添加外层的表格布局，但是实际上浏览器会默认添加一个隐藏的table，它默认的布局是”table-layout: auto”，所以这个表格的大小是根据单元格的大小确定的。有前端基础的都知道，表格中每个单元格是有自己的最小宽度的，这样我们设置了”width: 1%”实际上是设置table的大小为单元格的最小宽度的100倍。但是很明显，表格是不可能这么宽的，这里可以理解为让表格的宽度尽可能的宽。而且根据单元格必须填满表格一行的特性，就自然呈现出这样的效果。</p>
-<p>为了验证，你把width设置为10%时，你会发现表格变小了，也是因为表格大小变成了最小单元格的宽度的10倍，这样也可以解释了</p>
-<p>另外如果我把width设置为100%时，会发现第一个单元格非常大然而，其他的也还是存在，但是都被压缩了。我是这样理解的——首先第一个单元格的宽度为100%的话，那么就是表格的大小了，但是这一行还有其他的单元格存在，它是不可能达到100%的，所以第一个尽可能宽，而其他的也能有最小宽度。</p>
-<h2 id="问题总结">问题总结</h2><p>根据width的值不同，表格会有不同的表现，可以分成两种情况。这里我们需要先计算width =（表格的最大宽度）×width的结果</p>
-<ul>
-<li>计算出的width小于单元格最小宽度</li>
-</ul>
-<p>这种情况下就是以单元格的最小宽度为width，再计算表格应有的大小，再分别各个单元格</p>
-<ul>
-<li>计算出的width大于单元格最小宽度</li>
-</ul>
-<p>这种情况下就从第一个单元格起尽量满足它的宽度，但是要保证后面的单元至少有它的最小宽度</p>
+<h2 id="错误先行">错误先行</h2><p>就先讲讲我用这个函数给数组赋值时出现的错误先吧，下面是出错代码：</p>
+<pre><code><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span>
+<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span>
+
+<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;
+
+<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>{
+    <span class="keyword">int</span> a[<span class="number">5</span>];
+    <span class="built_in">memset</span>(a, <span class="number">1</span>, <span class="number">5</span>);
+    <span class="built_in">cout</span> &lt;&lt; a[<span class="number">0</span>] &lt;&lt; endl;
+}
+</code></pre><p>这里我原本的期望输出是<code>1</code>，但是结果确是<code>16843009</code>。这是为什么呢？且听下面讲解。</p>
+<h2 id="官方介绍">官方介绍</h2><p><a href="http://www.cplusplus.com/reference/cstring/memset/?kw=memset" target="_blank" rel="external">C++文档</a>是这样描述的</p>
+<blockquote>
+<p><code>void * memset ( void * ptr, int value, size_t num );</code></p>
+<p><strong>Fill block of memory</strong><br>Sets the first num bytes of the block of memory pointed by <code>ptr</code> to the specified <code>value</code> (interpreted as an unsigned char).</p>
+</blockquote>
+<h2 id="个人理解">个人理解</h2><p>其实这个函数的官方介绍还是很好理解的，就是用一个<code>value</code>在内存空间内填充指定的数组，这个都没有什么特殊的。但是细心的人应该注意到了最后括号内的说法。没错！这就是破解最上面的错误的关键。</p>
+<p>文档中还有对各个参数的讲解，其中对第二个参数<code>value</code>参数的描述是这样的：</p>
+<blockquote>
+<p><strong>value</strong><br>Value to be set. The value is passed as an int, but the function fills the block of memory using the unsigned char conversion of this value.</p>
+</blockquote>
+<p>没错！它的意思就是这里的value虽然在参数中是int类型，但是它是被当成char类型的。要知道int类型有32位而char类型就只有8位！这样我输入的1是被当成<code>0x01</code>而不是<code>0x00000001</code>。这样也可以知道为什么会输出<code>16843009</code>了，我将内存连续设置为<code>0x01</code>，这样我读取时读取了一个int类型共32位，实际读到的就是<code>0x01010101</code>转化成十进制就是<code>16843009</code>。</p>
+<h2 id="个人感悟">个人感悟</h2><p>还是太嫩了！</p>
 </span>
       
     </div>
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/CSS/" rel="tag">#CSS</a>
-          
-        </div>
-      
 
       
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/09/13/在Ubuntu14-04下安装nwjs/" rel="prev">在Ubuntu14.04下安装nwjs</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/09/11/Linux系统下-etc-init-和-etc-init-d-的区别/" rel="next">Linux系统下/etc/init/和/etc/init.d/的区别</a>
+              <a href="/2015/09/17/Linux下实现ssh无密码认证/" rel="next">Linux下实现ssh无密码认证</a>
             
           </div>
         </div>
@@ -377,7 +364,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题描述"><span class="nav-number">1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题理解"><span class="nav-number">2.</span> <span class="nav-text">问题理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题总结"><span class="nav-number">3.</span> <span class="nav-text">问题总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#错误先行"><span class="nav-number">1.</span> <span class="nav-text">错误先行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#官方介绍"><span class="nav-number">2.</span> <span class="nav-text">官方介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#个人理解"><span class="nav-number">3.</span> <span class="nav-text">个人理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#个人感悟"><span class="nav-number">4.</span> <span class="nav-text">个人感悟</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>

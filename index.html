@@ -164,6 +164,109 @@
           
           
             
+              <a class="post-title-link" href="/2015/10/21/C-中memset的用法/" itemprop="url">
+                C++中memset的用法
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-10-21T00:50:43+08:00" content="2015-10-21">
+            2015-10-21
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/C-基础/" itemprop="url" rel="index">
+                  <span itemprop="name">C++基础</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><blockquote>
+<p>最近沉浸在刷西西里算法题中不可自拔，其中经常有用到memset这个函数，用它来给数组进行清零实在有些方便，但是有一次我尝试使用这个函数给int数组赋值时却缺出现奇怪的错误，这时我发现虽然我有经常用这个函数，但是对它的用法一无所知，于是在次重新研究下这个函数的用法。</p>
+</blockquote>
+<h2 id="错误先行">错误先行</h2><p>就先讲讲我用这个函数给数组赋值时出现的错误先吧，下面是出错代码：</p>
+<pre><code><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span>
+<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span>
+
+<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;
+
+<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>{
+    <span class="keyword">int</span> a[<span class="number">5</span>];
+    <span class="built_in">memset</span>(a, <span class="number">1</span>, <span class="number">5</span>);
+    <span class="built_in">cout</span> &lt;&lt; a[<span class="number">0</span>] &lt;&lt; endl;
+}
+</code></pre><p>这里我原本的期望输出是<code>1</code>，但是结果确是<code>16843009</code>。这是为什么呢？且听下面讲解。</p>
+<h2 id="官方介绍">官方介绍</h2><p><a href="http://www.cplusplus.com/reference/cstring/memset/?kw=memset" target="_blank" rel="external">C++文档</a>是这样描述的</p>
+<blockquote>
+<p><code>void * memset ( void * ptr, int value, size_t num );</code></p>
+<p><strong>Fill block of memory</strong><br>Sets the first num bytes of the block of memory pointed by <code>ptr</code> to the specified <code>value</code> (interpreted as an unsigned char).</p>
+</blockquote>
+<h2 id="个人理解">个人理解</h2><p>其实这个函数的官方介绍还是很好理解的，就是用一个<code>value</code>在内存空间内填充指定的数组，这个都没有什么特殊的。但是细心的人应该注意到了最后括号内的说法。没错！这就是破解最上面的错误的关键。</p>
+<p>文档中还有对各个参数的讲解，其中对第二个参数<code>value</code>参数的描述是这样的：</p>
+<blockquote>
+<p><strong>value</strong><br>Value to be set. The value is passed as an int, but the function fills the block of memory using the unsigned char conversion of this value.</p>
+</blockquote>
+<p>没错！它的意思就是这里的value虽然在参数中是int类型，但是它是被当成char类型的。要知道int类型有32位而char类型就只有8位！这样我输入的1是被当成<code>0x01</code>而不是<code>0x00000001</code>。这样也可以知道为什么会输出<code>16843009</code>了，我将内存连续设置为<code>0x01</code>，这样我读取时读取了一个int类型共32位，实际读到的就是<code>0x01010101</code>转化成十进制就是<code>16843009</code>。</p>
+<h2 id="个人感悟">个人感悟</h2><p>还是太嫩了！</p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2015/09/17/Linux下实现ssh无密码认证/" itemprop="url">
                 Linux下实现ssh无密码认证
               </a>
@@ -793,21 +896,21 @@ id_rsa  id_rsa.pub
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-count">7</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">分类</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
