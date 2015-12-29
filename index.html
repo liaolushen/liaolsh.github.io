@@ -164,6 +164,94 @@
           
           
             
+              <a class="post-title-link" href="/2015/12/29/初探nginx部署/" itemprop="url">
+                初探nginx部署
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-12-29T16:17:13+08:00" content="2015-12-29">
+            2015-12-29
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/服务器配置/" itemprop="url" rel="index">
+                  <span itemprop="name">服务器配置</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><blockquote>
+<p>其实之前就有多次使用过nginx，但是每次使用配置时都会出现小问题，网上教程又大多已经过时，写一篇nginx基础配置流程给自己备忘用。</p>
+</blockquote>
+<h2 id="下载nginx">下载nginx</h2><p>我目前使用的系统是ubuntu14.04，直接通过<code>apt-get</code>安装的nginx过于老旧，不建议使用。目前最新的nginx有stable版和mainline版两种，可以根据自己的需求按照下面的方法安装：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 如果要安装mainline版可以把下面一句最后的stable改成development</span></span><br><span class="line">add-apt-repository ppa:nginx/stable</span><br><span class="line">apt-get update</span><br><span class="line">apt-get install nginx</span><br></pre></td></tr></table></figure></p>
+<p>最后你可以试试输入<code>nginx -v</code>，如果安装成功了，应该会告诉你<code>nginx</code>的版本号</p>
+<h2 id="配置nginx">配置nginx</h2><p>安装成功后就是开始配置，这里我只讲简单的配置以及一些我自己遇到的坑，具体的还是去官网看。</p>
+<h3 id="配置文件的位置">配置文件的位置</h3><p>这里是我遇到的第一个坑，就是关于在哪里配置的问题，首先打开<code>/etc/nginx/</code>文件夹，网上大多教程都说直接在<code>nginx.conf</code>中进行配置，那可能时以前的nginx的配置方法。至少现在我是不推荐的，因为里面放的都是一些全局的配置信息，虽然能把配置写里面，但是如果配置很多，别人看着也很累吧。那么配置信息应该放哪呢？其实在默认的配置文件中你可以找到下面两句话：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">include /etc/nginx/conf.d/*.conf;</span><br><span class="line">include /etc/nginx/sites-enabled/*;</span><br></pre></td></tr></table></figure></p>
+<p>如果懂<code>bash</code>脚本的人就会知道，他会默认引用<code>conf.d</code>和<code>sites-enabled</code>两个文件夹里面的配置文件信息，但是为什么要有两个文件夹呢？如果你安装的是<code>mainline</code>版的<code>nginx</code>，会发现就只包含了<code>conf.d</code>文件夹，而并没有下面那一句，甚至都已经没有了<code>site-enabled</code>文件夹。其实这是<code>nginx</code>的一个变化吧，以前的<code>nginx</code>也是只有<code>sites-enabled</code>文件夹，而没有<code>conf.d</code>。反正说这么多，就一句话——<strong>在<code>conf.d</code>文件夹里放私人配置文件，且配置文件以<code>.conf</code>为后缀！</strong></p>
+<h3 id="配置出错的处理">配置出错的处理</h3><p>配置时自然避免不了出错，而且经常发现出错后你可能就是单纯的打不开网页，而完全不知道是哪里错了，出错时该怎么办呢？其实答案很简单——看log日志。反正我的一些低级错误都是通过log日志来定位的。下面是我的日志打印的示例<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">error_<span class="built_in">log</span>  /var/<span class="built_in">log</span>/nginx/error.log warn;</span><br></pre></td></tr></table></figure></p>
+<p><code>error_log</code>有两个参数，第一个参数是你的日志的位置，第二个参数是日志输出的等级，日志等级有<code>debug | info | notice | warn | error | crit | alert | emerg</code>，具体的信息去官网看吧。</p>
+<h3 id="新配置启用">新配置启用</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service nginx reload</span><br></pre></td></tr></table></figure>
+<h2 id="配置总结">配置总结</h2><p>其实我写得很简单，但是我感觉已经够用了。知道了配置在哪写，配置写错了怎么查错，剩下的应该都能自己解决了。<strong>官方文档才是王道！</strong></p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2015/10/21/C-中memset的用法/" itemprop="url">
                 C++中memset的用法
               </a>
@@ -896,7 +984,7 @@ id_rsa  id_rsa.pub
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-count">8</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -910,7 +998,7 @@ id_rsa  id_rsa.pub
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-count">6</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
