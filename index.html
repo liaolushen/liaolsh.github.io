@@ -1,11 +1,16 @@
 <!doctype html>
-<html class="theme-next use-motion ">
-<head>
+
+
+
   
 
-<meta charset="UTF-8"/>
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
 
 
 <meta http-equiv="Cache-Control" content="no-transform" />
@@ -18,23 +23,38 @@
 
 
 
-  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
 
 
 
 
-<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.1"/>
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
 
 
 
 
-  <meta name="keywords" content="Hexo,next" />
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="平凡之路" />
 
 
 
 
 
-  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
 
 
 <meta name="description">
@@ -48,10 +68,18 @@
 <meta name="twitter:description">
 
 
+
 <script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: '',
-    sidebar: 'post'
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
   };
 </script>
 
@@ -60,35 +88,40 @@
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
-  <!--[if lte IE 8]>
-  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
-    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
-      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
-           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
-           style='margin-left:auto;margin-right:auto;display: block;'/>
-    </a>
-  </div>
-<![endif]-->
   
 
 
 
-  <div class="container one-column 
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left 
    page-home 
-">
+ ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><h1 class="site-meta">
-  <span class="logo-line-before"><i></i></span>
-  <a href="/" class="brand" rel="start">
-      <span class="logo">
-        <i class="icon-next-logo"></i>
-      </span>
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
       <span class="site-title">平凡之路</span>
-  </a>
-  <span class="logo-line-after"><i></i></span>
-</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
 
 <div class="site-nav-toggle">
   <button>
@@ -102,12 +135,14 @@
   
 
   
-    <ul id="menu" class="menu ">
+    <ul id="menu" class="menu">
       
         
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
-            <i class="menu-item-icon icon-next-home"></i> <br />
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
             首页
           </a>
         </li>
@@ -115,7 +150,9 @@
         
         <li class="menu-item menu-item-categories">
           <a href="/categories" rel="section">
-            <i class="menu-item-icon icon-next-categories"></i> <br />
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
             分类
           </a>
         </li>
@@ -123,7 +160,9 @@
         
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
-            <i class="menu-item-icon icon-next-archives"></i> <br />
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
             归档
           </a>
         </li>
@@ -131,13 +170,14 @@
         
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
-            <i class="menu-item-icon icon-next-tags"></i> <br />
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
             标签
           </a>
         </li>
       
 
-      
       
     </ul>
   
@@ -150,80 +190,168 @@
 
     <main id="main" class="main">
       <div class="main-inner">
-        <div id="content" class="content"> 
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
   <section id="posts" class="posts-expand">
     
       
 
+  
+  
+
+  
+  
+  
+
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
 
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/12/29/初探nginx部署/" itemprop="url">
-                初探nginx部署
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-12-29T16:17:13+08:00" content="2015-12-29">
-            2015-12-29
-          </time>
-        </span>
+    
+      <header class="post-header">
 
         
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
+        
+          <h1 class="post-title" itemprop="name headline">
             
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/服务器配置/" itemprop="url" rel="index">
-                  <span itemprop="name">服务器配置</span>
+            
+              
+                
+                <a class="post-title-link" href="/2016/03/22/Linux文本处理命令sed和awk介绍/" itemprop="url">
+                  Linux文本处理命令sed和awk介绍
                 </a>
-              </span>
-
               
-              
-
             
-          </span>
+          </h1>
         
 
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-22T01:34:21+08:00" content="2016-03-22">
+              2016-03-22
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Linux的日常/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux的日常</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
         
           
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><blockquote>
-<p>其实之前就有多次使用过nginx，但是每次使用配置时都会出现小问题，网上教程又大多已经过时，写一篇nginx基础配置流程给自己备忘用。</p>
+            <blockquote>
+<p>很久没写博客了，最近在准备寻找暑期实习，在做笔试的过程中遇到一道考察Linux文本命令的题目，当时没有什么头绪。因为我个人日常其实比较少用到会直接使用shell命令在执行文本操作，如果有需要我可能更多的倾向于使用python这种更强大的脚本语言。但是在了解了有关的命令操作后，感觉在一些简单的文档处理方面，确实会比较方便，所以记录一下</p>
 </blockquote>
-<h2 id="下载nginx">下载nginx</h2><p>我目前使用的系统是ubuntu14.04，直接通过<code>apt-get</code>安装的nginx过于老旧，不建议使用。目前最新的nginx有stable版和mainline版两种，可以根据自己的需求按照下面的方法安装：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 如果要安装mainline版可以把下面一句最后的stable改成development</span></span><br><span class="line">add-apt-repository ppa:nginx/stable</span><br><span class="line">apt-get update</span><br><span class="line">apt-get install nginx</span><br></pre></td></tr></table></figure></p>
-<p>最后你可以试试输入<code>nginx -v</code>，如果安装成功了，应该会告诉你<code>nginx</code>的版本号</p>
-<h2 id="配置nginx">配置nginx</h2><p>安装成功后就是开始配置，这里我只讲简单的配置以及一些我自己遇到的坑，具体的还是去官网看。</p>
-<h3 id="配置文件的位置">配置文件的位置</h3><p>这里是我遇到的第一个坑，就是关于在哪里配置的问题，首先打开<code>/etc/nginx/</code>文件夹，网上大多教程都说直接在<code>nginx.conf</code>中进行配置，那可能时以前的nginx的配置方法。至少现在我是不推荐的，因为里面放的都是一些全局的配置信息，虽然能把配置写里面，但是如果配置很多，别人看着也很累吧。那么配置信息应该放哪呢？其实在默认的配置文件中你可以找到下面两句话：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">include /etc/nginx/conf.d/*.conf;</span><br><span class="line">include /etc/nginx/sites-enabled/*;</span><br></pre></td></tr></table></figure></p>
-<p>如果懂<code>bash</code>脚本的人就会知道，他会默认引用<code>conf.d</code>和<code>sites-enabled</code>两个文件夹里面的配置文件信息，但是为什么要有两个文件夹呢？如果你安装的是<code>mainline</code>版的<code>nginx</code>，会发现就只包含了<code>conf.d</code>文件夹，而并没有下面那一句，甚至都已经没有了<code>site-enabled</code>文件夹。其实这是<code>nginx</code>的一个变化吧，以前的<code>nginx</code>也是只有<code>sites-enabled</code>文件夹，而没有<code>conf.d</code>。反正说这么多，就一句话——<strong>在<code>conf.d</code>文件夹里放私人配置文件，且配置文件以<code>.conf</code>为后缀！</strong></p>
-<h3 id="配置出错的处理">配置出错的处理</h3><p>配置时自然避免不了出错，而且经常发现出错后你可能就是单纯的打不开网页，而完全不知道是哪里错了，出错时该怎么办呢？其实答案很简单——看log日志。反正我的一些低级错误都是通过log日志来定位的。下面是我的日志打印的示例<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">error_<span class="built_in">log</span>  /var/<span class="built_in">log</span>/nginx/error.log warn;</span><br></pre></td></tr></table></figure></p>
-<p><code>error_log</code>有两个参数，第一个参数是你的日志的位置，第二个参数是日志输出的等级，日志等级有<code>debug | info | notice | warn | error | crit | alert | emerg</code>，具体的信息去官网看吧。</p>
-<h3 id="新配置启用">新配置启用</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service nginx reload</span><br></pre></td></tr></table></figure>
-<h2 id="配置总结">配置总结</h2><p>其实我写得很简单，但是我感觉已经够用了。知道了配置在哪写，配置写错了怎么查错，剩下的应该都能自己解决了。<strong>官方文档才是王道！</strong></p>
-</span>
+<h2 id="三大文本处理命令"><a href="#三大文本处理命令" class="headerlink" title="三大文本处理命令"></a>三大文本处理命令</h2><p>Linux有三个常用的文本处理命令，分别是<code>grep</code>，<code>sed</code>和<code>awk</code>。其中<code>grep</code>是大家使用的比较多的，它擅长通过正则寻找到特定内容，在文本处理以外的地方也有广泛的使用，在这就不具体的讲了。<code>awk</code>和<code>sed</code>相对于<code>grep</code>来说，不光能够在文档中进行查找，它们还能进行更强大的处理。<code>sed</code>擅长文本替换，<code>awk</code>擅长数据流处理。</p>
+<h2 id="Sed——文本替换利器"><a href="#Sed——文本替换利器" class="headerlink" title="Sed——文本替换利器"></a>Sed——文本替换利器</h2><h3 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h3><p><code>Sed</code>是一个非交互的流编辑器。它可以从文件或者标准输入中接受文本输入，对输入中特定的某些行逐行进行处理，然后输出到标准输出或者文件中。<code>sed</code>经常使用作为一个管道命令的组成部分。</p>
+<h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><table>
+<thead>
+<tr>
+<th style="text-align:center">操作</th>
+<th style="text-align:center">名称</th>
+<th style="text-align:center">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>[address-range]/p</code></td>
+<td style="text-align:center">打印</td>
+<td style="text-align:center">根据条件打印特定行</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>[address-range]/d</code></td>
+<td style="text-align:center">删除</td>
+<td style="text-align:center">删除特定行</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>s/pattern1/pattern2/</code></td>
+<td style="text-align:center">替换</td>
+<td style="text-align:center">用<code>pattern2</code>替换一行中第一个匹配的<code>pattern1</code>实例</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>[address-range]/s/pattern1/pattern2/</code></td>
+<td style="text-align:center">替换</td>
+<td style="text-align:center">在指定行进行替换</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>[address-range]/y/pattern1/pattern2/</code></td>
+<td style="text-align:center">转换</td>
+<td style="text-align:center">将<code>pattern1</code>中的字符逐一转换为<code>pattern2</code>中的字符</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>[address] i pattern Filename</code></td>
+<td style="text-align:center">插入</td>
+<td style="text-align:center">将变化插入文件中，通常更多使用<code>-i</code>的选项</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>g</code></td>
+<td style="text-align:center">全局选项</td>
+<td style="text-align:center">将变化应用到全局，而不只是每一行的第一个匹配</td>
+</tr>
+</tbody>
+</table>
+<h3 id="操作实例"><a href="#操作实例" class="headerlink" title="操作实例"></a>操作实例</h3><ul>
+<li>首处替换<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sed <span class="string">'s/text/replace_text/'</span> file   <span class="comment"># 替换每一行的第一处匹配的text</span></span><br></pre></td></tr></table></figure></li>
+<li>全局替换<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sed <span class="string">'s/text/replace_text/g'</span> file   <span class="comment"># 替换每一处匹配的text</span></span><br><span class="line"><span class="comment"># 如果加上-i，则会直接替换原文件内容</span></span><br></pre></td></tr></table></figure></li>
+<li><p>移除空白行</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sed <span class="string">'/^$/d'</span> file</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>打印目标行</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sed -n <span class="string">'/Jones/p'</span> file    <span class="comment"># 打印只含有"Jones"的行</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="Awk——数据流处理工具"><a href="#Awk——数据流处理工具" class="headerlink" title="Awk——数据流处理工具"></a>Awk——数据流处理工具</h2><h3 id="基本介绍-1"><a href="#基本介绍-1" class="headerlink" title="基本介绍"></a>基本介绍</h3><p><code>awk</code>是一个带有C特性的文本处理语言，他的虽然不能像<code>python</code>那样完成所有的事情，但是在文本处理方面，他可以简单快捷的完成大部分任务</p>
+<h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3><p><strong>最基础的用法</strong><br><code>awk</code>最基础的用法是可以按照列来处理数据，比如变量<code>$1</code>，<code>$2</code>代表一列中的第一部分和第二部分内容。<br>比如<code>awk &lt; file &#39;{ print $2 }&#39;</code>就表示输出每一行的第一个字段。如果要同时输出第二第三个字段可以使用<code>awk &lt; file &#39;{ print $2, $3 }&#39;</code>。</p>
+<p><strong>输入分割</strong><br><code>awk</code>默认的是采用空格和<code>tab</code>对字段进行分割，也可以使用<code>-F</code>选项设置<code>awk</code>的分割字符。比如我想要获得Linux系统中所有用户的家目录，可以使用<code>awk &lt; /etc/passwd -F: &#39;{ print $6 }&#39;</code>来完成。</p>
+<p><strong>数学计算</strong><br><code>awk</code>是一个弱类型语言，变量既可以是字符串也可以是数字，取决于他们的使用方式。所有数字都是浮点型。比如要实现华氏度到摄氏度的转换，可以用<code>awk &#39;{ print ($1-32)*(5/9) }&#39;</code>来实现。<br>运算符的选择基本和C语言是一致的，虽然C语言中的拓展结构还无法工作。在<code>awk</code>中，字符串的拼接可以简单的通过把两个字符串表达式写在一起实现。<code>+</code>总是表示加法。因此会出现如下情况，希望能理解：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span> 5 4 | awk <span class="string">'&#123; print $1 + $2 &#125;'</span> <span class="comment"># prints 9</span></span><br><span class="line"><span class="built_in">echo</span> 5 4 | awk <span class="string">'&#123; print $1 $2 &#125;'</span> <span class="comment"># prints 54</span></span><br><span class="line"><span class="built_in">echo</span> 5 4 | awk <span class="string">'&#123; print $1, $2 &#125;'</span> <span class="comment"># prints "5 4"</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="基本结构"><a href="#基本结构" class="headerlink" title="基本结构"></a>基本结构</h3><p><strong>变量</strong><br><code>awk</code>有一些内置的变量。<code>$1</code>等是一些例子；对于初学者来说还有一些其他的例子，比如<code>NF</code>表示该行的所有字段的数量（<code>$NF</code>就表示最后一个字段），还有<code>$0</code>表示整个的输入行。<br>你还使用你自己喜欢的名字可以创建你自己的变量（当然保留字除外）。你不需要实现声明它们，如果变量没有被明确的赋值，它们默认是<code>&quot;&quot;</code>或者<code>0</code>。比如说，你想要打印一行中所有的数字的平均数，你可以用下面的语句来实现：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">awk <span class="string">'&#123; tot=0; for (i=1; i&lt;=NF; i++) tot += $i; print tot/NF; &#125;'</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>语句块</strong><br>如果想要计算所有列中每行第一个数字的平均数，你可以这么做：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">awk <span class="string">'&#123; tot += $1; n += 1; &#125;  END &#123; print tot/n; &#125;'</span></span><br></pre></td></tr></table></figure><br>注意到上面的例子中有两个不同的语句块，其中第二个语句块前有一个<code>END</code>，这表示在所有的输入处理完后执行该语句块。语句块前面的部分只是表示一个条件，事实上你可以用任何表达式放在一个语句块的前面，表示当满足某些条件时才执行语句块。比如<code>awk &#39; $1==0 { print $2 }&#39;</code>表示当每一行的第一列为<code>0</code>时，打印该行的第二列。你也能用正则表达式，比如<code>awk &#39; /^test/ { print $2 }&#39;</code>。如果你没有加任何的限定条件，那么该语句块会在每一行都执行。其中<code>START</code>和<code>END</code>是两个特殊情况，它们分别表示输入前和输入后执行语句块。</p>
+
+          
         
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -243,90 +371,227 @@
     
       
 
+  
+  
+
+  
+  
+  
+
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
 
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/10/21/C-中memset的用法/" itemprop="url">
-                C++中memset的用法
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-10-21T00:50:43+08:00" content="2015-10-21">
-            2015-10-21
-          </time>
-        </span>
+    
+      <header class="post-header">
 
         
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
+        
+          <h1 class="post-title" itemprop="name headline">
             
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/C-基础/" itemprop="url" rel="index">
-                  <span itemprop="name">C++基础</span>
+            
+              
+                
+                <a class="post-title-link" href="/2015/12/29/初探nginx部署/" itemprop="url">
+                  初探nginx部署
                 </a>
-              </span>
-
               
-              
-
             
-          </span>
+          </h1>
         
 
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-12-29T16:17:13+08:00" content="2015-12-29">
+              2015-12-29
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/服务器配置/" itemprop="url" rel="index">
+                    <span itemprop="name">服务器配置</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
         
           
+            <blockquote>
+<p>其实之前就有多次使用过nginx，但是每次使用配置时都会出现小问题，网上教程又大多已经过时，写一篇nginx基础配置流程给自己备忘用。</p>
+</blockquote>
+<h2 id="下载nginx"><a href="#下载nginx" class="headerlink" title="下载nginx"></a>下载nginx</h2><p>我目前使用的系统是ubuntu14.04，直接通过<code>apt-get</code>安装的nginx过于老旧，不建议使用。目前最新的nginx有stable版和mainline版两种，可以根据自己的需求按照下面的方法安装：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 如果要安装mainline版可以把下面一句最后的stable改成development</span></span><br><span class="line">add-apt-repository ppa:nginx/stable</span><br><span class="line">apt-get update</span><br><span class="line">apt-get install nginx</span><br></pre></td></tr></table></figure><br>最后你可以试试输入<code>nginx -v</code>，如果安装成功了，应该会告诉你<code>nginx</code>的版本号</p>
+<h2 id="配置nginx"><a href="#配置nginx" class="headerlink" title="配置nginx"></a>配置nginx</h2><p>安装成功后就是开始配置，这里我只讲简单的配置以及一些我自己遇到的坑，具体的还是去官网看。</p>
+<h3 id="配置文件的位置"><a href="#配置文件的位置" class="headerlink" title="配置文件的位置"></a>配置文件的位置</h3><p>这里是我遇到的第一个坑，就是关于在哪里配置的问题，首先打开<code>/etc/nginx/</code>文件夹，网上大多教程都说直接在<code>nginx.conf</code>中进行配置，那可能时以前的nginx的配置方法。至少现在我是不推荐的，因为里面放的都是一些全局的配置信息，虽然能把配置写里面，但是如果配置很多，别人看着也很累吧。那么配置信息应该放哪呢？其实在默认的配置文件中你可以找到下面两句话：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">include /etc/nginx/conf.d/*.conf;</span><br><span class="line">include /etc/nginx/sites-enabled/*;</span><br></pre></td></tr></table></figure><br>如果懂<code>bash</code>脚本的人就会知道，他会默认引用<code>conf.d</code>和<code>sites-enabled</code>两个文件夹里面的配置文件信息，但是为什么要有两个文件夹呢？如果你安装的是<code>mainline</code>版的<code>nginx</code>，会发现就只包含了<code>conf.d</code>文件夹，而并没有下面那一句，甚至都已经没有了<code>site-enabled</code>文件夹。其实这是<code>nginx</code>的一个变化吧，以前的<code>nginx</code>也是只有<code>sites-enabled</code>文件夹，而没有<code>conf.d</code>。反正说这么多，就一句话——<strong>在<code>conf.d</code>文件夹里放私人配置文件，且配置文件以<code>.conf</code>为后缀！</strong></p>
+<h3 id="配置出错的处理"><a href="#配置出错的处理" class="headerlink" title="配置出错的处理"></a>配置出错的处理</h3><p>配置时自然避免不了出错，而且经常发现出错后你可能就是单纯的打不开网页，而完全不知道是哪里错了，出错时该怎么办呢？其实答案很简单——看log日志。反正我的一些低级错误都是通过log日志来定位的。下面是我的日志打印的示例<br><code>error_log  /var/log/nginx/error.log warn;</code><br><code>error_log</code>有两个参数，第一个参数是你的日志的位置，第二个参数是日志输出的等级，日志等级有<code>debug | info | notice | warn | error | crit | alert | emerg</code>，具体的信息去官网看吧。</p>
+<h3 id="新配置启用"><a href="#新配置启用" class="headerlink" title="新配置启用"></a>新配置启用</h3><p><code>sudo service nginx reload</code></p>
+<h2 id="配置总结"><a href="#配置总结" class="headerlink" title="配置总结"></a>配置总结</h2><p>其实我写得很简单，但是我感觉已经够用了。知道了配置在哪写，配置写错了怎么查错，剩下的应该都能自己解决了。<strong>官方文档才是王道！</strong></p>
+
+          
         
-      </div>
-    </header>
+      
+    </div>
 
-    <div class="post-body">
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/10/21/C-中memset的用法/" itemprop="url">
+                  C++中memset的用法
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-10-21T00:50:43+08:00" content="2015-10-21">
+              2015-10-21
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/C-基础/" itemprop="url" rel="index">
+                    <span itemprop="name">C++基础</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
 
       
       
 
       
         
-          <span itemprop="articleBody"><blockquote>
+          
+            <blockquote>
 <p>最近沉浸在刷西西里算法题中不可自拔，其中经常有用到memset这个函数，用它来给数组进行清零实在有些方便，但是有一次我尝试使用这个函数给int数组赋值时却缺出现奇怪的错误，这时我发现虽然我有经常用这个函数，但是对它的用法一无所知，于是在次重新研究下这个函数的用法。</p>
 </blockquote>
-<h2 id="错误先行">错误先行</h2><p>就先讲讲我用这个函数给数组赋值时出现的错误先吧，下面是出错代码：</p>
-<pre><code><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span>
-<span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span>
-
-<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;
-
-<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>{
-    <span class="keyword">int</span> a[<span class="number">5</span>];
-    <span class="built_in">memset</span>(a, <span class="number">1</span>, <span class="number">5</span>);
-    <span class="built_in">cout</span> &lt;&lt; a[<span class="number">0</span>] &lt;&lt; endl;
-}
-</code></pre><p>这里我原本的期望输出是<code>1</code>，但是结果确是<code>16843009</code>。这是为什么呢？且听下面讲解。</p>
-<h2 id="官方介绍">官方介绍</h2><p><a href="http://www.cplusplus.com/reference/cstring/memset/?kw=memset" target="_blank" rel="external">C++文档</a>是这样描述的</p>
+<h2 id="错误先行"><a href="#错误先行" class="headerlink" title="错误先行"></a>错误先行</h2><p>就先讲讲我用这个函数给数组赋值时出现的错误先吧，下面是出错代码：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a[<span class="number">5</span>];</span><br><span class="line">    <span class="built_in">memset</span>(a, <span class="number">1</span>, <span class="number">5</span>);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; a[<span class="number">0</span>] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这里我原本的期望输出是<code>1</code>，但是结果确是<code>16843009</code>。这是为什么呢？且听下面讲解。</p>
+<h2 id="官方介绍"><a href="#官方介绍" class="headerlink" title="官方介绍"></a>官方介绍</h2><p><a href="http://www.cplusplus.com/reference/cstring/memset/?kw=memset" target="_blank" rel="external">C++文档</a>是这样描述的</p>
 <blockquote>
 <p><code>void * memset ( void * ptr, int value, size_t num );</code></p>
 <p><strong>Fill block of memory</strong><br>Sets the first num bytes of the block of memory pointed by <code>ptr</code> to the specified <code>value</code> (interpreted as an unsigned char).</p>
 </blockquote>
-<h2 id="个人理解">个人理解</h2><p>其实这个函数的官方介绍还是很好理解的，就是用一个<code>value</code>在内存空间内填充指定的数组，这个都没有什么特殊的。但是细心的人应该注意到了最后括号内的说法。没错！这就是破解最上面的错误的关键。</p>
+<h2 id="个人理解"><a href="#个人理解" class="headerlink" title="个人理解"></a>个人理解</h2><p>其实这个函数的官方介绍还是很好理解的，就是用一个<code>value</code>在内存空间内填充指定的数组，这个都没有什么特殊的。但是细心的人应该注意到了最后括号内的说法。没错！这就是破解最上面的错误的关键。</p>
 <p>文档中还有对各个参数的讲解，其中对第二个参数<code>value</code>参数的描述是这样的：</p>
 <blockquote>
 <p><strong>value</strong><br>Value to be set. The value is passed as an int, but the function fills the block of memory using the unsigned char conversion of this value.</p>
 </blockquote>
 <p>没错！它的意思就是这里的value虽然在参数中是int类型，但是它是被当成char类型的。要知道int类型有32位而char类型就只有8位！这样我输入的1是被当成<code>0x01</code>而不是<code>0x00000001</code>。这样也可以知道为什么会输出<code>16843009</code>了，我将内存连续设置为<code>0x01</code>，这样我读取时读取了一个int类型共32位，实际读到的就是<code>0x01010101</code>转化成十进制就是<code>16843009</code>。</p>
-<h2 id="个人感悟">个人感悟</h2><p>还是太嫩了！</p>
-</span>
+<h2 id="个人感悟"><a href="#个人感悟" class="headerlink" title="个人感悟"></a>个人感悟</h2><p>还是太嫩了！</p>
+
+          
         
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -346,67 +611,93 @@
     
       
 
+  
+  
+
+  
+  
+  
+
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
 
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/09/17/Linux下实现ssh无密码认证/" itemprop="url">
-                Linux下实现ssh无密码认证
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-09-17T23:44:25+08:00" content="2015-09-17">
-            2015-09-17
-          </time>
-        </span>
+    
+      <header class="post-header">
 
         
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
+        
+          <h1 class="post-title" itemprop="name headline">
             
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Linux的日常/" itemprop="url" rel="index">
-                  <span itemprop="name">Linux的日常</span>
+            
+              
+                
+                <a class="post-title-link" href="/2015/09/17/Linux下实现ssh无密码认证/" itemprop="url">
+                  Linux下实现ssh无密码认证
                 </a>
-              </span>
-
               
-              
-
             
-          </span>
+          </h1>
         
 
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-09-17T23:44:25+08:00" content="2015-09-17">
+              2015-09-17
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Linux的日常/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux的日常</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
         
           
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><blockquote>
+            <blockquote>
 <p>如果你有登陆远程机器的需要，那么应该对ssh并不陌生。这篇文章属于新手向，自己写写也当做加深印象，万一以后哪天忘了，也可以看看。</p>
 </blockquote>
-<h2 id="SSH简介">SSH简介</h2><p>当然既然要用它，先看看ssh是什么?水平有限，我就直接引用wikipedia的介绍了。</p>
-<h3 id="SSH用途">SSH用途</h3><p>SSH是Secure Shell的缩写，是一项创建在应用层和传输层基础上的安全协议，为计算机上的Shell（壳层）提供安全的传输和使用环境。简而言之，SSH是目前较可靠，专为远程登录会话和其他网络服务提供安全性的协议。</p>
-<h3 id="SSH验证方式">SSH验证方式</h3><p>在客户端来看，SSH提供两种级别的安全验证。</p>
+<h2 id="SSH简介"><a href="#SSH简介" class="headerlink" title="SSH简介"></a>SSH简介</h2><p>当然既然要用它，先看看ssh是什么?水平有限，我就直接引用wikipedia的介绍了。</p>
+<h3 id="SSH用途"><a href="#SSH用途" class="headerlink" title="SSH用途"></a>SSH用途</h3><p>SSH是Secure Shell的缩写，是一项创建在应用层和传输层基础上的安全协议，为计算机上的Shell（壳层）提供安全的传输和使用环境。简而言之，SSH是目前较可靠，专为远程登录会话和其他网络服务提供安全性的协议。</p>
+<h3 id="SSH验证方式"><a href="#SSH验证方式" class="headerlink" title="SSH验证方式"></a>SSH验证方式</h3><p>在客户端来看，SSH提供两种级别的安全验证。</p>
 <ul>
 <li><p>第一种级别（基于密码的安全验证），知道帐号和密码，就可以登录到远程主机，并且所有传输的数据都会被加密。但是，可能会有别的服务器在冒充真正的服务器，无法避免被“中间人”攻击。</p>
 </li>
@@ -414,40 +705,45 @@
 </li>
 </ul>
 <p>这里我介绍的是如何使用第二种安全验证方式，即基于密钥的验证。</p>
-<h2 id="SSH实现密钥验证">SSH实现密钥验证</h2><h3 id="第一步：本地生成公钥">第一步：本地生成公钥</h3><p>Linux下通过ssh-keygen命令生成公钥，一般直接默认放置家目录的.ssh文件夹下为宜。</p>
-<pre><code>test<span class="comment">@liaolushen-ThinkPad-E450:~$ ssh-keygen </span>
+<h2 id="SSH实现密钥验证"><a href="#SSH实现密钥验证" class="headerlink" title="SSH实现密钥验证"></a>SSH实现密钥验证</h2><h3 id="第一步：本地生成公钥"><a href="#第一步：本地生成公钥" class="headerlink" title="第一步：本地生成公钥"></a>第一步：本地生成公钥</h3><p>Linux下通过ssh-keygen命令生成公钥，一般直接默认放置家目录的.ssh文件夹下为宜。</p>
+<pre><code>test@liaolushen-ThinkPad-E450:~$ ssh-keygen
 Generating public/private rsa key pair.
-Enter file in which to save the key (/home/test/.ssh/id_rsa): 
-Created directory '/home/test/.ssh'.
-Enter passphrase (empty for no passphrase): 
-Enter same passphrase again: 
+Enter file in which to save the key (/home/test/.ssh/id_rsa):
+Created directory &apos;/home/test/.ssh&apos;.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
 Your identification has been saved in /home/test/.ssh/id_rsa.
 Your public key has been saved in /home/test/.ssh/id_rsa.pub.
 The key fingerprint is:
-f2:ab:1e:c7:00:53:54:13:3a:26:5f:50:35:50:4b:a1 test<span class="comment">@liaolushen-ThinkPad-E450</span>
-The key's randomart image is:
+f2:ab:1e:c7:00:53:54:13:3a:26:5f:50:35:50:4b:a1 test@liaolushen-ThinkPad-E450
+The key&apos;s randomart image is:
 +--[ RSA 2048]----+
-|<span class="string">     .+o*=*.     </span>|
-|<span class="string">     . o + o     </span>|
-|<span class="string">    + + E .      </span>|
-|<span class="string">     * o         </span>|
-|<span class="string">      + S        </span>|
-|<span class="string">       =         </span>|
-|<span class="string">      . +        </span>|
-|<span class="string">       o .       </span>|
-|<span class="string">     .o..        </span>|
+|     .+o*=*.     |
+|     . o + o     |
+|    + + E .      |
+|     * o         |
+|      + S        |
+|       =         |
+|      . +        |
+|       o .       |
+|     .o..        |
 +-----------------+
 </code></pre><p>查看生成的密钥</p>
-<pre><code>test<span class="variable">@liaolushen</span>-<span class="constant">ThinkPad</span>-<span class="constant">E450</span><span class="symbol">:~</span><span class="variable">$ </span>ls .ssh/
+<pre><code>test@liaolushen-ThinkPad-E450:~$ ls .ssh/
 id_rsa  id_rsa.pub
 </code></pre><p>这里id_rsa.pub就是你的公钥了，id_rsa则是你的私钥。</p>
-<h3 id="第二步：远程机器放置公钥">第二步：远程机器放置公钥</h3><p>公钥成功生成后，下一步自然就是把它放到你的远程机器上面去了。这里我们把公钥添加到远程机器的authorized_keys文件中，在这个文件中，每个公钥占据一行。所以如果远程机器上并没有其他人的公钥，则直接如下传输即可，但是如果已经有了其他人的公钥，那么就只能手动添加了。</p>
-<pre><code>test<span class="variable">@liaolushen</span>-<span class="constant">ThinkPad</span>-<span class="constant">E450</span><span class="symbol">:~</span><span class="variable">$ </span>scp .ssh/id_rsa.pub root<span class="variable">@120</span>.<span class="number">24.74</span>.<span class="number">135</span><span class="symbol">:~/</span>.ssh/authorized_keys
-</code></pre><h3 id="第三步：实现无密码登陆">第三步：实现无密码登陆</h3><p>现在就来试一试</p>
-<pre><code>test<span class="variable">@liaolushen</span>-<span class="constant">ThinkPad</span>-<span class="constant">E450</span><span class="symbol">:~</span><span class="variable">$ </span>ssh root<span class="variable">@120</span>.<span class="number">24.74</span>.<span class="number">135</span>
+<h3 id="第二步：远程机器放置公钥"><a href="#第二步：远程机器放置公钥" class="headerlink" title="第二步：远程机器放置公钥"></a>第二步：远程机器放置公钥</h3><p>公钥成功生成后，下一步自然就是把它放到你的远程机器上面去了。这里我们把公钥添加到远程机器的authorized_keys文件中，在这个文件中，每个公钥占据一行。所以如果远程机器上并没有其他人的公钥，则直接如下传输即可，但是如果已经有了其他人的公钥，那么就只能手动添加了。</p>
+<pre><code>test@liaolushen-ThinkPad-E450:~$ scp .ssh/id_rsa.pub root@120.24.74.135:~/.ssh/authorized_keys
+</code></pre><h3 id="第三步：实现无密码登陆"><a href="#第三步：实现无密码登陆" class="headerlink" title="第三步：实现无密码登陆"></a>第三步：实现无密码登陆</h3><p>现在就来试一试</p>
+<pre><code>test@liaolushen-ThinkPad-E450:~$ ssh root@120.24.74.135
 </code></pre><p>果然成功了，这样以后登陆远程机器就不需要密码啦</p>
-</span>
+
+          
         
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -467,472 +763,110 @@ id_rsa  id_rsa.pub
     
       
 
+  
+  
+
+  
+  
+  
+
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
 
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/09/13/在Ubuntu14-04下安装nwjs/" itemprop="url">
-                在Ubuntu14.04下安装nwjs
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-09-13T23:05:29+08:00" content="2015-09-13">
-            2015-09-13
-          </time>
-        </span>
+    
+      <header class="post-header">
 
         
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
+        
+          <h1 class="post-title" itemprop="name headline">
             
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Linux的日常/" itemprop="url" rel="index">
-                  <span itemprop="name">Linux的日常</span>
+            
+              
+                
+                <a class="post-title-link" href="/2015/09/13/在Ubuntu14-04下安装nwjs/" itemprop="url">
+                  在Ubuntu14.04下安装nwjs
                 </a>
-              </span>
-
               
-              
-
             
-          </span>
+          </h1>
         
 
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-09-13T23:05:29+08:00" content="2015-09-13">
+              2015-09-13
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Linux的日常/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux的日常</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
         
           
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><blockquote>
+            <blockquote>
 <p>原本我是想直接用npm来安装nwjs的，很不幸不知是不是防火墙的原因，最终失败了，只能手动安装。</p>
 </blockquote>
-<h2 id="下载安装包">下载安装包</h2><pre><code>sudo wget -c <span class="string">http:</span><span class="comment">//dl.nwjs.io/v0.12.3/nwjs-v0.12.3-linux-x64.tar.gz</span>
+<h2 id="下载安装包"><a href="#下载安装包" class="headerlink" title="下载安装包"></a>下载安装包</h2><pre><code>sudo wget -c http://dl.nwjs.io/v0.12.3/nwjs-v0.12.3-linux-x64.tar.gz
 </code></pre><p>如果失败可能是网站被墙，可以打开代理下载</p>
-<h2 id="解压到本地">解压到本地</h2><pre><code><span class="tag">sudo</span> <span class="tag">-xvf</span> <span class="tag">nwjs-v0</span><span class="class">.12</span><span class="class">.3-linux-x64</span><span class="class">.tar</span><span class="class">.gz</span>
-</code></pre><h2 id="放到合适目录">放到合适目录</h2><p>我个人喜好将第三方软件放到/opt/文件夹中</p>
-<pre><code>sudo mv nwjs-v0<span class="number">.12</span><span class="number">.3</span>-linux-x64 /opt/nwjs
-</code></pre><h2 id="添加路径">添加路径</h2><p>创建一个在/etc/profile.d/下创建新的bash文件</p>
-<pre><code>sudo <span class="keyword">vim</span> /etc/<span class="keyword">profile</span>.<span class="keyword">d</span>/nwjs.<span class="keyword">sh</span>
+<h2 id="解压到本地"><a href="#解压到本地" class="headerlink" title="解压到本地"></a>解压到本地</h2><pre><code>sudo -xvf nwjs-v0.12.3-linux-x64.tar.gz
+</code></pre><h2 id="放到合适目录"><a href="#放到合适目录" class="headerlink" title="放到合适目录"></a>放到合适目录</h2><p>我个人喜好将第三方软件放到/opt/文件夹中</p>
+<pre><code>sudo mv nwjs-v0.12.3-linux-x64 /opt/nwjs
+</code></pre><h2 id="添加路径"><a href="#添加路径" class="headerlink" title="添加路径"></a>添加路径</h2><p>创建一个在/etc/profile.d/下创建新的bash文件</p>
+<pre><code>sudo vim /etc/profile.d/nwjs.sh
 </code></pre><p>在里面添加nwjs的路径</p>
-<pre><code>export <span class="constant">PATH=</span><span class="variable">$PATH</span><span class="symbol">:/opt/nwjs</span>
-</code></pre><h2 id="检测是否成功">检测是否成功</h2><p>这里你可以在命令行输入nw，如果成功打开nwjs那就成功了，有时我发现有的会报如下错误</p>
-<pre><code><span class="string">bash:</span> <span class="regexp">/opt/</span>nwjs/<span class="string">nw:</span> Permission denied
+<pre><code>export PATH=$PATH:/opt/nwjs
+</code></pre><h2 id="检测是否成功"><a href="#检测是否成功" class="headerlink" title="检测是否成功"></a>检测是否成功</h2><p>这里你可以在命令行输入nw，如果成功打开nwjs那就成功了，有时我发现有的会报如下错误</p>
+<pre><code>bash: /opt/nwjs/nw: Permission denied
 </code></pre><p>这是因为没有nw的执行文件没有添加可执行属性，执行如下命令即可：</p>
-<pre><code><span class="label">sudo</span> chmod +x /<span class="preprocessor">opt</span>/nwjs/nw
-</code></pre></span>
+<pre><code>sudo chmod +x /opt/nwjs/nw
+</code></pre>
+          
         
       
     </div>
 
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/09/12/深入理解-1-table-cell-width/" itemprop="url">
-                深入理解 1% table-cell width
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-09-12T16:18:37+08:00" content="2015-09-12">
-            2015-09-12
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/前端学习/" itemprop="url" rel="index">
-                  <span itemprop="name">前端学习</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><blockquote>
-<p>今天在写页面时遇到一个有趣的前端问题，拿出来分享一下。</p>
-</blockquote>
-<h2 id="问题描述">问题描述</h2><p>今天在使用Bootstrap给页面添加底部导航栏时，需要在手机下也使导航栏呈现水平排列的效果。最后在网上查找解决方法是，看到这样一个解决方法：</p>
-<pre><code><span class="class">.nav-justified</span> &gt; <span class="tag">li</span> <span class="rules">{
-    <span class="rule"><span class="attribute">display</span>:<span class="value"> table-cell</span></span>; 
-    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">1%</span></span></span>;
-}</span>
-</code></pre><p>而且确实奏效了，但是代码很有意思，我便另外试了试，如果width为百分数，发现随着width值的改变，。这也算前端的一个hack方法，也有许多人已经研究过，推荐一个别人写的网站，可以调试这个方法。<a href="http://codepen.io/ld0rman/pen/FCiLh" target="_blank" rel="external">http://codepen.io/ld0rman/pen/FCiLh</a></p>
-<h2 id="问题理解">问题理解</h2><p>在这里，我在查看了网上的资料后也讲讲我自己的理解。</p>
-<p>实际上，有关表的宽度计算是件挺麻烦的事情，这也不是我们的重点，之间先来看看我把table-cell的width设为1%，为什么会出现这样的结果好了。</p>
-<p>这里我们利用”display: table-cell”使得每个li元素变成了一个表格中的单元格，注意到我们并没有这个单元格添加外层的表格布局，但是实际上浏览器会默认添加一个隐藏的table，它默认的布局是”table-layout: auto”，所以这个表格的大小是根据单元格的大小确定的。有前端基础的都知道，表格中每个单元格是有自己的最小宽度的，这样我们设置了”width: 1%”实际上是设置table的大小为单元格的最小宽度的100倍。但是很明显，表格是不可能这么宽的，这里可以理解为让表格的宽度尽可能的宽。而且根据单元格必须填满表格一行的特性，就自然呈现出这样的效果。</p>
-<p>为了验证，你把width设置为10%时，你会发现表格变小了，也是因为表格大小变成了最小单元格的宽度的10倍，这样也可以解释了</p>
-<p>另外如果我把width设置为100%时，会发现第一个单元格非常大然而，其他的也还是存在，但是都被压缩了。我是这样理解的——首先第一个单元格的宽度为100%的话，那么就是表格的大小了，但是这一行还有其他的单元格存在，它是不可能达到100%的，所以第一个尽可能宽，而其他的也能有最小宽度。</p>
-<h2 id="问题总结">问题总结</h2><p>根据width的值不同，表格会有不同的表现，可以分成两种情况。这里我们需要先计算width =（表格的最大宽度）×width的结果</p>
-<ul>
-<li>计算出的width小于单元格最小宽度</li>
-</ul>
-<p>这种情况下就是以单元格的最小宽度为width，再计算表格应有的大小，再分别各个单元格</p>
-<ul>
-<li>计算出的width大于单元格最小宽度</li>
-</ul>
-<p>这种情况下就从第一个单元格起尽量满足它的宽度，但是要保证后面的单元至少有它的最小宽度</p>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/09/11/Linux系统下-etc-init-和-etc-init-d-的区别/" itemprop="url">
-                Linux系统下/etc/init/和/etc/init.d/的区别
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-09-11T01:37:28+08:00" content="2015-09-11">
-            2015-09-11
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Linux的日常/" itemprop="url" rel="index">
-                  <span itemprop="name">Linux的日常</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><h2 id="问题发现">问题发现</h2><p>今天在给ubuntu系统安装ftp服务时，一件奇怪的事引起了我的注意。当我服务安装完成后，想要测试一下是否能控制服务，便输入如下命令：</p>
-<pre><code><span class="title">service</span> vsftpd restart
-</code></pre><p>它返回的信息是：</p>
-<pre><code><span class="string">stop:</span> Unknown <span class="string">job:</span> vsftpd
-<span class="string">start:</span> Unknown <span class="string">job:</span> vsftpd
-</code></pre><p>另外甚至在<b>/etc/init.d/文件夹</b>中都没有发现vsftpd的启动脚本。</p>
-<p>之后我google后在service命令前加了sudo，命令如下:</p>
-<pre><code><span class="title">sudo</span> service vsftpd restart
-</code></pre><p>结果成功运行。</p>
-<p>现在虽然ftp能够正常的启动和终止，但是另一个疑问没有解决，service不是调用/etc/init.d/文件夹里的启动脚本的吗，然而/etc/init.d/中并没有vsftpd这个脚本，为什么还能够运行？我通过man命令查看了一下service指令的信息，果然发现了一些端倪，里面是这样讲的</p>
-<blockquote>
-<p>The  SCRIPT  parameter specifies a System V init script, located in /etc/init.d/SCRIPT, or the name of an upstart job in /etc/init.</p>
-</blockquote>
-<p>于是我在/etc/init文件夹中果然发现了vsftpd.conf这个文件。但是又有奇怪的事情出现了，查看/etc/init/文件夹中许多文件是和/etc/init.d/文件夹中重复的，比如mysql。那么这两个文件夹有什么区别吗？</p>
-<h2 id="寻求答案">寻求答案</h2><p>这种东西当然是寻求google的帮助最快了。果然很快就找到了一位外国大神的答案。他是这么说的：</p>
-<blockquote>
-<p>/etc/init.d contains scripts used by the System V init tools (SysVinit). This is the traditional service management package for Linux, containing the init program (the first process that is run when the kernel has finished initializing¹) as well as some infrastructure to start and stop services and configure them. Specifically, files in /etc/init.d are shell scripts that respond to start, stop, restart, and (when supported) reload commands to manage a particular service. These scripts can be invoked directly or (most commonly) via some other trigger (typically the presence of a symbolic link in /etc/rc?.d/).</p>
-<p>/etc/init contains configuration files used by Upstart. Upstart is a young service management package championed by Ubuntu. Files in /etc/init are configuration files telling Upstart how and when to start, stop, reload the configuration, or query the status of a service. As of lucid, Ubuntu is transitioning from SysVinit to Upstart, which explains why many services come with SysVinit scripts even though Upstart configuration files are preferred. In fact, the SysVinit scripts are processed by a compatibility layer in Upstart.</p>
-</blockquote>
-<p>简而言之，/etc/init.d/就是旧时代liunx的用法，/etc/init/是现在Ubuntu的提倡并一步步转型的用法。为了平缓过渡，便让service命令可以同时寻找到两个文件夹。</p>
-<h2 id="问题思考">问题思考</h2><p>问题到这貌似解决了，但是感觉还差些什么。</p>
-<p>在查看service命令时，是这么介绍的：</p>
-<blockquote>
-<p>service - run a System V init script</p>
-</blockquote>
-<p>没错，service这个命令一开始就是用在SysVinit上的，为了支持Upstart才额外增加了启动/etc/init/文件夹，那么如何使用Upstart启动服务呢。最后查看Upstart的文档，当我要重启mysql时。我只需要输入如下命令：</p>
-<pre><code><span class="title">sudo</span> restart mysql
-</code></pre><p>而且Upstart的启动配置文件确实简单很多。</p>
-<h2 id="问题总结">问题总结</h2><p>其实这两个文件夹的区别也就是服务启动方式的区别，目前有三种启动方式。(例如我启动mysql服务)</p>
-<p>1.只从/etc/init.d/文件夹启动：</p>
-<pre><code>/etc/init.d/mysql <span class="built_in">start</span>
-</code></pre><p>2.只从/etc/init/文件夹启动(Ubuntu提倡)：</p>
-<pre><code>sudo <span class="built_in">start</span> mysql
-</code></pre><p>3.从两个文件夹中启动：</p>
-<pre><code>service <span class="built_in">start</span> mysql
-</code></pre></span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/09/07/如何在Ubunutu配置Apache虚拟主机/" itemprop="url">
-                Ubunutu下Apache配置私人目录
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-09-07T12:00:34+08:00" content="2015-09-07">
-            2015-09-07
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/服务器配置/" itemprop="url" rel="index">
-                  <span itemprop="name">服务器配置</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><blockquote>
-<p>在Ubuntu中apache的默认目录为/var/www/html/,而该目录的操作是需要root权限的。能不能额外增加端口，然后工作目录设置为自己的私人目录呢？当然是可以的！</p>
-</blockquote>
-<h2 id="添加端口">添加端口</h2><p>打开/etc/apache2/ports.conf</p>
-<pre><code>sudo <span class="keyword">vi</span> /etc/apache2/ports.<span class="keyword">conf</span>
-</code></pre><p>添加一个端口，如下所示：</p>
-<pre><code><span class="keyword"><span class="common">Listen</span></span> 80
-<span class="keyword"><span class="common">Listen</span></span> 8080
-
-<span class="tag">&lt;IfModule ssl_module&gt;</span>
-    <span class="keyword"><span class="common">Listen</span></span> 443
-<span class="tag">&lt;/IfModule&gt;</span>
-
-<span class="tag">&lt;IfModule mod_gnutls.c&gt;</span>
-    <span class="keyword"><span class="common">Listen</span></span> 443
-<span class="tag">&lt;/IfModule&gt;</span>
-</code></pre><h2 id="添加配置文件">添加配置文件</h2><p>在/etc/apache2/sites-avavilble目录下添加一个配置文件。可以直接复制该目录下的000-default.conf文件：</p>
-<pre><code>sudo cp <span class="regexp">/etc/</span>apache2<span class="regexp">/sites-available/</span><span class="number">000</span>-<span class="keyword">default</span>.conf <span class="regexp">/etc/</span>apache2<span class="regexp">/sites-available/my</span>.conf
-</code></pre><p>VirtualHost <em>:80改为VirtualHost </em>:8080</p>
-<p>DocumentRoot /var/www/html 改为自己的目录</p>
-<h2 id="使配置文件生效">使配置文件生效</h2><p>将my.conf 软链到sites-enabled</p>
-<pre><code>sudo ln -s <span class="regexp">/etc/</span>apache2<span class="regexp">/sites-available/my</span>.conf <span class="regexp">/etc/</span>apache2<span class="regexp">/sites-enabled/my</span>.conf
-</code></pre><p>重启apache</p>
-<pre><code><span class="title">sudo</span> service apache2 restart
-</code></pre></span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/09/07/Sublime-Text3-报错-There-are-no-packages-available-for-installation/" itemprop="url">
-                Sublime Text3 报错 There are no packages available for installation
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-09-07T01:18:36+08:00" content="2015-09-07">
-            2015-09-07
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/工具使用/" itemprop="url" rel="index">
-                  <span itemprop="name">工具使用</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><blockquote>
-<p>今天想用sublime安装插件时，发现了这个报错，于是开始网上查找问题解决方法，最后总算解决。</p>
-</blockquote>
-<h2 id="问题原因">问题原因</h2><p>其实原因非常简单，查看了sublime作者的github上的issue之后，我试了下登陆sublime的package资源网站<a href="https://packagecontrol.io/" target="_blank" rel="external">https://packagecontrol.io/</a>，发现果然是无法进入，开启代理之后成功打开，最终确定罪魁祸首是<a href="https://zh.wikipedia.org/wiki/%E9%98%B2%E7%81%AB%E9%95%BF%E5%9F%8E" target="_blank" rel="external">GFW</a>。</p>
-<h2 id="问题解决">问题解决</h2><p>确定问题后，解决方法就有很多了。你也改代理之类的，网上教程很多。我的方法是设置自己的代理上网。<br>在preferences-&gt;Setting-User加上如下语句</p>
-<pre><code><span class="string">"http_proxy"</span>: <span class="string">"http://127.0.0.1:1080"</span>
-</code></pre><p>这里改成你自己的上网代理端口即可。</p>
-</span>
-        
+    <div>
       
     </div>
 
@@ -953,14 +887,21 @@ id_rsa  id_rsa.pub
   </section>
 
   
- </div>
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
 
+
+
+          </div>
+          
+
+
+          
+
+        </div>
         
-
-        
-      </div>
-
-      
+          
   
   <div class="sidebar-toggle">
     <div class="sidebar-toggle-line-wrap">
@@ -975,33 +916,41 @@ id_rsa  id_rsa.pub
 
       
 
-      <section class="site-overview">
+      
+
+      <section class="site-overview sidebar-panel  sidebar-panel-active ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" src="/images/default_avatar.jpg" alt="廖卢神" itemprop="image"/>
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="廖卢神" />
           <p class="site-author-name" itemprop="name">廖卢神</p>
+          <p class="site-description motion-element" itemprop="description"></p>
         </div>
-        <p class="site-description motion-element" itemprop="description"></p>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-count">9</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
-          <div class="site-state-item site-state-categories">
-            <a href="/categories">
-              <span class="site-state-item-count">5</span>
-              <span class="site-state-item-name">分类</span>
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
               </a>
-          </div>
+            </div>
+          
 
-          <div class="site-state-item site-state-tags">
-            <a href="/tags">
-              <span class="site-state-item-count">6</span>
-              <span class="site-state-item-name">标签</span>
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">标签</span>
               </a>
-          </div>
+            </div>
+          
 
         </nav>
 
@@ -1014,7 +963,8 @@ id_rsa  id_rsa.pub
         
         
 
-        <div class="links-of-author motion-element">
+        
+        <div class="links-of-blogroll motion-element">
           
         </div>
 
@@ -1026,15 +976,18 @@ id_rsa  id_rsa.pub
   </aside>
 
 
+        
+      </div>
     </main>
 
     <footer id="footer" class="footer">
-      <div class="footer-inner"> <div class="copyright" >
+      <div class="footer-inner">
+        <div class="copyright" >
   
-  &copy; &nbsp; 
-  <span itemprop="copyrightYear">2015</span>
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
   <span class="with-love">
-    <i class="icon-next-heart"></i>
+    <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">廖卢神</span>
 </div>
@@ -1046,75 +999,83 @@ id_rsa  id_rsa.pub
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT
+    NexT.Mist
   </a>
 </div>
 
 
- </div>
+
+      </div>
     </footer>
 
-    <div class="back-to-top"></div>
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
   </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
 
   <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
 
-  
-  
-  
-    
-    
-
-  
-
-
-  
-  
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
-  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.1"></script>
-
-
-  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.1"></script>
-  
-
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
-  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
-
-  <script type="text/javascript" src="/js/motion_global.js?v=0.4.5.1" id="motion.global"></script>
-
-
-
-
-  <script type="text/javascript" src="/js/nav-toggle.js?v=0.4.5.1"></script>
   <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
 
-  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
 
-  <script type="text/javascript">
-    $(document).ready(function () {
-      if (CONFIG.sidebar === 'always') {
-        displaySidebar();
-      }
-      if (isMobile()) {
-        FastClick.attach(document.body);
-      }
-    });
-  </script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
 
   
 
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
   
   
 
   
-  <script type="text/javascript" src="/js/lazyload.js"></script>
-  <script type="text/javascript">
-    $(function () {
-      $("#posts").find('img').lazyload({
-        placeholder: "/images/loading.gif",
-        effect: "fadeIn"
-      });
-    });
-  </script>
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+
 </body>
 </html>

@@ -1,11 +1,16 @@
 <!doctype html>
-<html class="theme-next use-motion ">
-<head>
+
+
+
   
 
-<meta charset="UTF-8"/>
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
 
 
 <meta http-equiv="Cache-Control" content="no-transform" />
@@ -18,14 +23,22 @@
 
 
 
-  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
 
 
 
 
-<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.1"/>
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
 
 
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
   <meta name="keywords" content="ssh," />
@@ -34,13 +47,20 @@
 
 
 
-  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
 
 
 <meta name="description" content="如果你有登陆远程机器的需要，那么应该对ssh并不陌生。这篇文章属于新手向，自己写写也当做加深印象，万一以后哪天忘了，也可以看看。
 
 SSH简介当然既然要用它，先看看ssh是什么?水平有限，我就直接引用wikipedia的介绍了。
-SSH用途SSH是Secure Shell的缩写，是一项创建在应用层和传输层基础上的安全协议，为计算机上的Shell（壳层）提供安全的传输和使用环境。简而言之，SSH是目">
+SSH用途SSH是Secure Shell的缩写，是一项创建在应用层和传输层基础上的安全协议，为计算机上的Shell（壳层）提供安全的传输和使用环境。简而言之，SSH是">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux下实现ssh无密码认证">
 <meta property="og:url" content="http://liaolushen.github.io/2015/09/17/Linux下实现ssh无密码认证/index.html">
@@ -48,20 +68,28 @@ SSH用途SSH是Secure Shell的缩写，是一项创建在应用层和传输层�
 <meta property="og:description" content="如果你有登陆远程机器的需要，那么应该对ssh并不陌生。这篇文章属于新手向，自己写写也当做加深印象，万一以后哪天忘了，也可以看看。
 
 SSH简介当然既然要用它，先看看ssh是什么?水平有限，我就直接引用wikipedia的介绍了。
-SSH用途SSH是Secure Shell的缩写，是一项创建在应用层和传输层基础上的安全协议，为计算机上的Shell（壳层）提供安全的传输和使用环境。简而言之，SSH是目">
-<meta property="og:updated_time" content="2015-09-17T17:52:15.030Z">
+SSH用途SSH是Secure Shell的缩写，是一项创建在应用层和传输层基础上的安全协议，为计算机上的Shell（壳层）提供安全的传输和使用环境。简而言之，SSH是">
+<meta property="og:updated_time" content="2016-03-21T17:35:29.546Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux下实现ssh无密码认证">
 <meta name="twitter:description" content="如果你有登陆远程机器的需要，那么应该对ssh并不陌生。这篇文章属于新手向，自己写写也当做加深印象，万一以后哪天忘了，也可以看看。
 
 SSH简介当然既然要用它，先看看ssh是什么?水平有限，我就直接引用wikipedia的介绍了。
-SSH用途SSH是Secure Shell的缩写，是一项创建在应用层和传输层基础上的安全协议，为计算机上的Shell（壳层）提供安全的传输和使用环境。简而言之，SSH是目">
+SSH用途SSH是Secure Shell的缩写，是一项创建在应用层和传输层基础上的安全协议，为计算机上的Shell（壳层）提供安全的传输和使用环境。简而言之，SSH是">
+
 
 
 <script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: '',
-    sidebar: 'post'
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
   };
 </script>
 
@@ -70,33 +98,38 @@ SSH用途SSH是Secure Shell的缩写，是一项创建在应用层和传输层�
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
-  <!--[if lte IE 8]>
-  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
-    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
-      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
-           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
-           style='margin-left:auto;margin-right:auto;display: block;'/>
-    </a>
-  </div>
-<![endif]-->
   
 
 
 
-  <div class="container one-column page-post-detail">
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><h1 class="site-meta">
-  <span class="logo-line-before"><i></i></span>
-  <a href="/" class="brand" rel="start">
-      <span class="logo">
-        <i class="icon-next-logo"></i>
-      </span>
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
       <span class="site-title">平凡之路</span>
-  </a>
-  <span class="logo-line-after"><i></i></span>
-</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
 
 <div class="site-nav-toggle">
   <button>
@@ -110,12 +143,14 @@ SSH用途SSH是Secure Shell的缩写，是一项创建在应用层和传输层�
   
 
   
-    <ul id="menu" class="menu ">
+    <ul id="menu" class="menu">
       
         
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
-            <i class="menu-item-icon icon-next-home"></i> <br />
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
             首页
           </a>
         </li>
@@ -123,7 +158,9 @@ SSH用途SSH是Secure Shell的缩写，是一项创建在应用层和传输层�
         
         <li class="menu-item menu-item-categories">
           <a href="/categories" rel="section">
-            <i class="menu-item-icon icon-next-categories"></i> <br />
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
             分类
           </a>
         </li>
@@ -131,7 +168,9 @@ SSH用途SSH是Secure Shell的缩写，是一项创建在应用层和传输层�
         
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
-            <i class="menu-item-icon icon-next-archives"></i> <br />
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
             归档
           </a>
         </li>
@@ -139,13 +178,14 @@ SSH用途SSH是Secure Shell的缩写，是一项创建在应用层和传输层�
         
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
-            <i class="menu-item-icon icon-next-tags"></i> <br />
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
             标签
           </a>
         </li>
       
 
-      
       
     </ul>
   
@@ -158,69 +198,95 @@ SSH用途SSH是Secure Shell的缩写，是一项创建在应用层和传输层�
 
     <main id="main" class="main">
       <div class="main-inner">
-        <div id="content" class="content"> 
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
 
   <div id="posts" class="posts-expand">
     
 
+  
+  
+
+  
+  
+  
+
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
 
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              Linux下实现ssh无密码认证
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-09-17T23:44:25+08:00" content="2015-09-17">
-            2015-09-17
-          </time>
-        </span>
+    
+      <header class="post-header">
 
         
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
+        
+          <h1 class="post-title" itemprop="name headline">
             
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Linux的日常/" itemprop="url" rel="index">
-                  <span itemprop="name">Linux的日常</span>
-                </a>
-              </span>
-
-              
-              
-
             
+              
+                Linux下实现ssh无密码认证
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-09-17T23:44:25+08:00" content="2015-09-17">
+              2015-09-17
+            </time>
           </span>
-        
 
-        
           
-        
-      </div>
-    </header>
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Linux的日常/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux的日常</span>
+                  </a>
+                </span>
 
-    <div class="post-body">
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
 
       
       
 
       
-        <span itemprop="articleBody"><blockquote>
+        <blockquote>
 <p>如果你有登陆远程机器的需要，那么应该对ssh并不陌生。这篇文章属于新手向，自己写写也当做加深印象，万一以后哪天忘了，也可以看看。</p>
 </blockquote>
-<h2 id="SSH简介">SSH简介</h2><p>当然既然要用它，先看看ssh是什么?水平有限，我就直接引用wikipedia的介绍了。</p>
-<h3 id="SSH用途">SSH用途</h3><p>SSH是Secure Shell的缩写，是一项创建在应用层和传输层基础上的安全协议，为计算机上的Shell（壳层）提供安全的传输和使用环境。简而言之，SSH是目前较可靠，专为远程登录会话和其他网络服务提供安全性的协议。</p>
-<h3 id="SSH验证方式">SSH验证方式</h3><p>在客户端来看，SSH提供两种级别的安全验证。</p>
+<h2 id="SSH简介"><a href="#SSH简介" class="headerlink" title="SSH简介"></a>SSH简介</h2><p>当然既然要用它，先看看ssh是什么?水平有限，我就直接引用wikipedia的介绍了。</p>
+<h3 id="SSH用途"><a href="#SSH用途" class="headerlink" title="SSH用途"></a>SSH用途</h3><p>SSH是Secure Shell的缩写，是一项创建在应用层和传输层基础上的安全协议，为计算机上的Shell（壳层）提供安全的传输和使用环境。简而言之，SSH是目前较可靠，专为远程登录会话和其他网络服务提供安全性的协议。</p>
+<h3 id="SSH验证方式"><a href="#SSH验证方式" class="headerlink" title="SSH验证方式"></a>SSH验证方式</h3><p>在客户端来看，SSH提供两种级别的安全验证。</p>
 <ul>
 <li><p>第一种级别（基于密码的安全验证），知道帐号和密码，就可以登录到远程主机，并且所有传输的数据都会被加密。但是，可能会有别的服务器在冒充真正的服务器，无法避免被“中间人”攻击。</p>
 </li>
@@ -228,39 +294,45 @@ SSH用途SSH是Secure Shell的缩写，是一项创建在应用层和传输层�
 </li>
 </ul>
 <p>这里我介绍的是如何使用第二种安全验证方式，即基于密钥的验证。</p>
-<h2 id="SSH实现密钥验证">SSH实现密钥验证</h2><h3 id="第一步：本地生成公钥">第一步：本地生成公钥</h3><p>Linux下通过ssh-keygen命令生成公钥，一般直接默认放置家目录的.ssh文件夹下为宜。</p>
-<pre><code>test<span class="comment">@liaolushen-ThinkPad-E450:~$ ssh-keygen </span>
+<h2 id="SSH实现密钥验证"><a href="#SSH实现密钥验证" class="headerlink" title="SSH实现密钥验证"></a>SSH实现密钥验证</h2><h3 id="第一步：本地生成公钥"><a href="#第一步：本地生成公钥" class="headerlink" title="第一步：本地生成公钥"></a>第一步：本地生成公钥</h3><p>Linux下通过ssh-keygen命令生成公钥，一般直接默认放置家目录的.ssh文件夹下为宜。</p>
+<pre><code>test@liaolushen-ThinkPad-E450:~$ ssh-keygen
 Generating public/private rsa key pair.
-Enter file in which to save the key (/home/test/.ssh/id_rsa): 
-Created directory '/home/test/.ssh'.
-Enter passphrase (empty for no passphrase): 
-Enter same passphrase again: 
+Enter file in which to save the key (/home/test/.ssh/id_rsa):
+Created directory &apos;/home/test/.ssh&apos;.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
 Your identification has been saved in /home/test/.ssh/id_rsa.
 Your public key has been saved in /home/test/.ssh/id_rsa.pub.
 The key fingerprint is:
-f2:ab:1e:c7:00:53:54:13:3a:26:5f:50:35:50:4b:a1 test<span class="comment">@liaolushen-ThinkPad-E450</span>
-The key's randomart image is:
+f2:ab:1e:c7:00:53:54:13:3a:26:5f:50:35:50:4b:a1 test@liaolushen-ThinkPad-E450
+The key&apos;s randomart image is:
 +--[ RSA 2048]----+
-|<span class="string">     .+o*=*.     </span>|
-|<span class="string">     . o + o     </span>|
-|<span class="string">    + + E .      </span>|
-|<span class="string">     * o         </span>|
-|<span class="string">      + S        </span>|
-|<span class="string">       =         </span>|
-|<span class="string">      . +        </span>|
-|<span class="string">       o .       </span>|
-|<span class="string">     .o..        </span>|
+|     .+o*=*.     |
+|     . o + o     |
+|    + + E .      |
+|     * o         |
+|      + S        |
+|       =         |
+|      . +        |
+|       o .       |
+|     .o..        |
 +-----------------+
 </code></pre><p>查看生成的密钥</p>
-<pre><code>test<span class="variable">@liaolushen</span>-<span class="constant">ThinkPad</span>-<span class="constant">E450</span><span class="symbol">:~</span><span class="variable">$ </span>ls .ssh/
+<pre><code>test@liaolushen-ThinkPad-E450:~$ ls .ssh/
 id_rsa  id_rsa.pub
 </code></pre><p>这里id_rsa.pub就是你的公钥了，id_rsa则是你的私钥。</p>
-<h3 id="第二步：远程机器放置公钥">第二步：远程机器放置公钥</h3><p>公钥成功生成后，下一步自然就是把它放到你的远程机器上面去了。这里我们把公钥添加到远程机器的authorized_keys文件中，在这个文件中，每个公钥占据一行。所以如果远程机器上并没有其他人的公钥，则直接如下传输即可，但是如果已经有了其他人的公钥，那么就只能手动添加了。</p>
-<pre><code>test<span class="variable">@liaolushen</span>-<span class="constant">ThinkPad</span>-<span class="constant">E450</span><span class="symbol">:~</span><span class="variable">$ </span>scp .ssh/id_rsa.pub root<span class="variable">@120</span>.<span class="number">24.74</span>.<span class="number">135</span><span class="symbol">:~/</span>.ssh/authorized_keys
-</code></pre><h3 id="第三步：实现无密码登陆">第三步：实现无密码登陆</h3><p>现在就来试一试</p>
-<pre><code>test<span class="variable">@liaolushen</span>-<span class="constant">ThinkPad</span>-<span class="constant">E450</span><span class="symbol">:~</span><span class="variable">$ </span>ssh root<span class="variable">@120</span>.<span class="number">24.74</span>.<span class="number">135</span>
+<h3 id="第二步：远程机器放置公钥"><a href="#第二步：远程机器放置公钥" class="headerlink" title="第二步：远程机器放置公钥"></a>第二步：远程机器放置公钥</h3><p>公钥成功生成后，下一步自然就是把它放到你的远程机器上面去了。这里我们把公钥添加到远程机器的authorized_keys文件中，在这个文件中，每个公钥占据一行。所以如果远程机器上并没有其他人的公钥，则直接如下传输即可，但是如果已经有了其他人的公钥，那么就只能手动添加了。</p>
+<pre><code>test@liaolushen-ThinkPad-E450:~$ scp .ssh/id_rsa.pub root@120.24.74.135:~/.ssh/authorized_keys
+</code></pre><h3 id="第三步：实现无密码登陆"><a href="#第三步：实现无密码登陆" class="headerlink" title="第三步：实现无密码登陆"></a>第三步：实现无密码登陆</h3><p>现在就来试一试</p>
+<pre><code>test@liaolushen-ThinkPad-E450:~$ ssh root@120.24.74.135
 </code></pre><p>果然成功了，这样以后登陆远程机器就不需要密码啦</p>
-</span>
+
+      
+    </div>
+
+    <div>
+      
+        
       
     </div>
 
@@ -275,15 +347,19 @@ id_rsa  id_rsa.pub
 
       
         <div class="post-nav">
-          <div class="post-nav-prev post-nav-item">
+          <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/10/21/C-中memset的用法/" rel="prev">C++中memset的用法</a>
+              <a href="/2015/09/13/在Ubuntu14-04下安装nwjs/" rel="next" title="在Ubuntu14.04下安装nwjs">
+                <i class="fa fa-chevron-left"></i> 在Ubuntu14.04下安装nwjs
+              </a>
             
           </div>
 
-          <div class="post-nav-next post-nav-item">
+          <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/09/13/在Ubuntu14-04下安装nwjs/" rel="next">在Ubuntu14.04下安装nwjs</a>
+              <a href="/2015/10/21/C-中memset的用法/" rel="prev" title="C++中memset的用法">
+                C++中memset的用法 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -301,18 +377,20 @@ id_rsa  id_rsa.pub
     </div>
   </div>
 
- </div>
 
-        
-
-        
-          <div class="comments" id="comments">
-            
           </div>
-        
-      </div>
+          
 
-      
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
   
   <div class="sidebar-toggle">
     <div class="sidebar-toggle-line-wrap">
@@ -326,6 +404,8 @@ id_rsa  id_rsa.pub
     <div class="sidebar-inner">
 
       
+
+      
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
             文章目录
@@ -336,33 +416,39 @@ id_rsa  id_rsa.pub
         </ul>
       
 
-      <section class="site-overview">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" src="/images/default_avatar.jpg" alt="廖卢神" itemprop="image"/>
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="廖卢神" />
           <p class="site-author-name" itemprop="name">廖卢神</p>
+          <p class="site-description motion-element" itemprop="description"></p>
         </div>
-        <p class="site-description motion-element" itemprop="description"></p>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-count">9</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
-          <div class="site-state-item site-state-categories">
-            <a href="/categories">
-              <span class="site-state-item-count">5</span>
-              <span class="site-state-item-name">分类</span>
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
               </a>
-          </div>
+            </div>
+          
 
-          <div class="site-state-item site-state-tags">
-            <a href="/tags">
-              <span class="site-state-item-count">6</span>
-              <span class="site-state-item-name">标签</span>
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">标签</span>
               </a>
-          </div>
+            </div>
+          
 
         </nav>
 
@@ -375,22 +461,29 @@ id_rsa  id_rsa.pub
         
         
 
-        <div class="links-of-author motion-element">
+        
+        <div class="links-of-blogroll motion-element">
           
         </div>
 
       </section>
 
       
-        <section class="post-toc-wrap sidebar-panel-active">
-          <div class="post-toc-indicator-top post-toc-indicator"></div>
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
           <div class="post-toc">
+            
+              
             
             
               <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#SSH简介"><span class="nav-number">1.</span> <span class="nav-text">SSH简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SSH用途"><span class="nav-number">1.1.</span> <span class="nav-text">SSH用途</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SSH验证方式"><span class="nav-number">1.2.</span> <span class="nav-text">SSH验证方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SSH实现密钥验证"><span class="nav-number">2.</span> <span class="nav-text">SSH实现密钥验证</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一步：本地生成公钥"><span class="nav-number">2.1.</span> <span class="nav-text">第一步：本地生成公钥</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二步：远程机器放置公钥"><span class="nav-number">2.2.</span> <span class="nav-text">第二步：远程机器放置公钥</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三步：实现无密码登陆"><span class="nav-number">2.3.</span> <span class="nav-text">第三步：实现无密码登陆</span></a></li></ol></li></ol></div>
             
           </div>
-          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
         </section>
       
 
@@ -398,15 +491,18 @@ id_rsa  id_rsa.pub
   </aside>
 
 
+        
+      </div>
     </main>
 
     <footer id="footer" class="footer">
-      <div class="footer-inner"> <div class="copyright" >
+      <div class="footer-inner">
+        <div class="copyright" >
   
-  &copy; &nbsp; 
-  <span itemprop="copyrightYear">2015</span>
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
   <span class="with-love">
-    <i class="icon-next-heart"></i>
+    <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">廖卢神</span>
 </div>
@@ -418,52 +514,63 @@ id_rsa  id_rsa.pub
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT
+    NexT.Mist
   </a>
 </div>
 
 
- </div>
+
+      </div>
     </footer>
 
-    <div class="back-to-top"></div>
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
   </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
 
   <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
 
-  
-  
-  
-    
-    
-
-  
-
-
-  
-  
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
-  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.1"></script>
-
-
-  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.1"></script>
-  
-
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
-  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
-
-  <script type="text/javascript" src="/js/motion_global.js?v=0.4.5.1" id="motion.global"></script>
-
-
-
-
-  <script type="text/javascript" src="/js/nav-toggle.js?v=0.4.5.1"></script>
   <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
 
-  
-  
-<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.1" id="bootstrap.scrollspy.custom"></script>
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
 
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
 
 <script type="text/javascript" id="sidebar.toc.highlight">
   $(document).ready(function () {
@@ -543,7 +650,7 @@ id_rsa  id_rsa.pub
 
     function tocOverflowIndicator (indicator, action) {
       var $indicator = $(indicator);
-      var opacity = action === 'show' ? 0.4 : 0;
+      var opacity = action === 'show' ? 1 : 0;
       $indicator.velocity ?
         $indicator.velocity('stop').velocity({
           opacity: opacity
@@ -597,7 +704,7 @@ id_rsa  id_rsa.pub
 
     $('.post-toc a').on('click', function (e) {
       e.preventDefault();
-      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
       var offset = $(targetSelector).offset().top;
       hasVelocity ?
         html.velocity('stop').velocity('scroll', {
@@ -610,42 +717,41 @@ id_rsa  id_rsa.pub
     });
 
     // Expand sidebar on post detail page by default, when post has a toc.
-    var $tocContent = $('.post-toc-content');
-    if (isDesktop() && CONFIG.sidebar === 'post') {
-      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
-        displaySidebar();
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
       }
-    }
+    };
   });
 </script>
 
 
 
-  <script type="text/javascript">
-    $(document).ready(function () {
-      if (CONFIG.sidebar === 'always') {
-        displaySidebar();
-      }
-      if (isMobile()) {
-        FastClick.attach(document.body);
-      }
-    });
-  </script>
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
 
   
 
+
+
+  
+
+
+
+  
   
   
 
   
-  <script type="text/javascript" src="/js/lazyload.js"></script>
-  <script type="text/javascript">
-    $(function () {
-      $("#posts").find('img').lazyload({
-        placeholder: "/images/loading.gif",
-        effect: "fadeIn"
-      });
-    });
-  </script>
+
+
 </body>
 </html>
