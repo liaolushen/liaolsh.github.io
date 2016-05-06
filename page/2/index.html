@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next mist use-motion">
+<html class="theme-next muse use-motion">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="平凡之路" />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -72,7 +72,7 @@
 <script type="text/javascript" id="hexo.configuration">
   var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: 'Mist',
+    scheme: 'Muse',
     sidebar: {"position":"left","display":"post"},
     fancybox: true,
     motion: true,
@@ -148,16 +148,6 @@
         </li>
       
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
-            
-              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
@@ -194,6 +184,129 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/09/13/在Ubuntu14-04下安装nwjs/" itemprop="url">
+                  在Ubuntu14.04下安装nwjs
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-09-13T23:05:29+08:00" content="2015-09-13">
+              2015-09-13
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Linux的日常/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux的日常</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>原本我是想直接用npm来安装nwjs的，很不幸不知是不是防火墙的原因，最终失败了，只能手动安装。</p>
+</blockquote>
+<h2 id="下载安装包"><a href="#下载安装包" class="headerlink" title="下载安装包"></a>下载安装包</h2><pre><code>sudo wget -c http://dl.nwjs.io/v0.12.3/nwjs-v0.12.3-linux-x64.tar.gz
+</code></pre><p>如果失败可能是网站被墙，可以打开代理下载</p>
+<h2 id="解压到本地"><a href="#解压到本地" class="headerlink" title="解压到本地"></a>解压到本地</h2><pre><code>sudo -xvf nwjs-v0.12.3-linux-x64.tar.gz
+</code></pre><h2 id="放到合适目录"><a href="#放到合适目录" class="headerlink" title="放到合适目录"></a>放到合适目录</h2><p>我个人喜好将第三方软件放到/opt/文件夹中</p>
+<pre><code>sudo mv nwjs-v0.12.3-linux-x64 /opt/nwjs
+</code></pre><h2 id="添加路径"><a href="#添加路径" class="headerlink" title="添加路径"></a>添加路径</h2><p>创建一个在/etc/profile.d/下创建新的bash文件</p>
+<pre><code>sudo vim /etc/profile.d/nwjs.sh
+</code></pre><p>在里面添加nwjs的路径</p>
+<pre><code>export PATH=$PATH:/opt/nwjs
+</code></pre><h2 id="检测是否成功"><a href="#检测是否成功" class="headerlink" title="检测是否成功"></a>检测是否成功</h2><p>这里你可以在命令行输入nw，如果成功打开nwjs那就成功了，有时我发现有的会报如下错误</p>
+<pre><code>bash: /opt/nwjs/nw: Permission denied
+</code></pre><p>这是因为没有nw的执行文件没有添加可执行属性，执行如下命令即可：</p>
+<pre><code>sudo chmod +x /opt/nwjs/nw
+</code></pre>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
     
       
 
@@ -757,24 +870,24 @@ Listen 8080
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-count">10</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           
             <div class="site-state-item site-state-categories">
-              <a href="/categories">
+              
                 <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">分类</span>
-              </a>
+              
             </div>
           
 
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -827,7 +940,7 @@ Listen 8080
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
+    NexT.Muse
   </a>
 </div>
 

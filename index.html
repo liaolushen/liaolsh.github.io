@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next mist use-motion">
+<html class="theme-next muse use-motion">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="平凡之路" />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -72,7 +72,7 @@
 <script type="text/javascript" id="hexo.configuration">
   var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: 'Mist',
+    scheme: 'Muse',
     sidebar: {"position":"left","display":"post"},
     fancybox: true,
     motion: true,
@@ -148,16 +148,6 @@
         </li>
       
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
-            
-              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
@@ -194,6 +184,160 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/05/06/初探docker/" itemprop="url">
+                  初探docker
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-06T22:49:00+08:00" content="2016-05-06">
+              2016-05-06
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/服务器配置/" itemprop="url" rel="index">
+                    <span itemprop="name">服务器配置</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>之前对docker的大名早有耳闻，但一直没有接触，这次趁着课程作业的机会了解了一下docker的工作方式，感觉docker确实非常强大，能够极大的方便生产开发环境的统一部署。这篇文章内容都是出自官方文档，我是勤劳的搬运工。</p>
+</blockquote>
+<h2 id="docker的安装"><a href="#docker的安装" class="headerlink" title="docker的安装"></a>docker的安装</h2><ol>
+<li><p>更新包信息，确保<code>apt</code>能够使用<code>https</code>方法以及安装了CA证书</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get install apt-transport-https ca-certificates</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>添加新的<code>GPG</code>密钥</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>添加<code>entry</code>到源中</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo touch /etc/apt/sources.list.d/docker.list</span><br><span class="line">$ sudo <span class="built_in">echo</span> `deb https://apt.dockerproject.org/repo ubuntu-xenial main` &gt;&gt; /etc/apt/sources.list.d/docker.list</span><br></pre></td></tr></table></figure>
+<p><strong>注意我这里使用的时ubuntu16.04，其他的版本添加的entry会有不同</strong></p>
+</li>
+<li><p>更新包信息，如果必要的话，还有清理旧仓库</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get update、</span><br><span class="line">$ sudo apt-get purge lxc-docker</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>官网还推荐在安装前安装一些推荐的包（我没去研究他们是干啥的）</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install linux-image-extra-$(uname -r)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>终于开始真正的安装</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install docker-engine</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>开启docker服务</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo service docker start</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h2><p>在定制自己的镜像之前，还是先了解下docker的最基本用法。<br>基本用法如下：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Usage:  [sudo] docker [subcommand] [flags] [arguments] ..</span></span><br><span class="line"><span class="comment"># Example:</span></span><br><span class="line">$ docker run -i -t ubuntu /bin/bash</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><code>docker run</code>启动了一个容器</li>
+<li><code>ubuntu</code>是你运行的镜像，这里就是ubuntu系统镜像。你定义了一个镜像，docker会现在本地进行寻找，如果没有会再到仓库中进行查找</li>
+<li><code>/bin/bash</code>是运行的命令，这里就是打开一个<code>bash</code>命令行</li>
+<li><code>-i</code>表示交互式运行</li>
+<li><code>-t</code>表示使用超级权限运行</li>
+</ul>
+<p>基本就是这样，我还省去了很多细节，官网讲的详细得多，如果还有疑惑可以去官网看看。</p>
+<h2 id="镜像定制"><a href="#镜像定制" class="headerlink" title="镜像定制"></a>镜像定制</h2><p>基本用法搞定了，接下来就是自己定制镜像了。在基本用法中已经有使用了镜像，但是是直接使用仓库中提供了，有时根据应用的不同会有不同的需求，这时就需要自己定制镜像了。<br>自己定制镜像首先需要创建一个<code>Dockerfile</code>文件，里面记录了该镜像的所有信息。</p>
+<p><code>Dockerfile</code>的基本语法是</p>
+<ul>
+<li>使用#来注释</li>
+<li>FROM 指令告诉 Docker 使用哪个镜像作为基础</li>
+<li>接着是维护者的信息</li>
+<li>RUN开头的指令会在创建中运行，比如安装一个软件包，在这里使用 apt-get 来安装了一些软件</li>
+</ul>
+<p>先直接上一个我自己的示例：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">FROM ubuntu</span><br><span class="line">MAINTAINER Luwin</span><br><span class="line">RUN apt-get update &amp;&amp; apt-get install -y git python-pip</span><br><span class="line">RUN git <span class="built_in">clone</span> https://github.com/liaolushen/quick-share.git</span><br><span class="line">RUN <span class="built_in">cd</span> quick-share &amp;&amp; pip install -r requirement.txt &amp;&amp; cp config.example.py config.py</span><br></pre></td></tr></table></figure></p>
+<p>编写完<code>Dockerfile</code>之后，使用<code>docker build</code>来生成镜像<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker build -t luwin/webapp:0.1 .</span><br></pre></td></tr></table></figure></p>
+<p>生成后就可以运行了<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker run <span class="_">-d</span> -p 8888:8888 luwin/webapp:0.1 python quick-share/run.py</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
     
       
 
@@ -761,129 +905,6 @@ id_rsa  id_rsa.pub
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/09/13/在Ubuntu14-04下安装nwjs/" itemprop="url">
-                  在Ubuntu14.04下安装nwjs
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-09-13T23:05:29+08:00" content="2015-09-13">
-              2015-09-13
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Linux的日常/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux的日常</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>原本我是想直接用npm来安装nwjs的，很不幸不知是不是防火墙的原因，最终失败了，只能手动安装。</p>
-</blockquote>
-<h2 id="下载安装包"><a href="#下载安装包" class="headerlink" title="下载安装包"></a>下载安装包</h2><pre><code>sudo wget -c http://dl.nwjs.io/v0.12.3/nwjs-v0.12.3-linux-x64.tar.gz
-</code></pre><p>如果失败可能是网站被墙，可以打开代理下载</p>
-<h2 id="解压到本地"><a href="#解压到本地" class="headerlink" title="解压到本地"></a>解压到本地</h2><pre><code>sudo -xvf nwjs-v0.12.3-linux-x64.tar.gz
-</code></pre><h2 id="放到合适目录"><a href="#放到合适目录" class="headerlink" title="放到合适目录"></a>放到合适目录</h2><p>我个人喜好将第三方软件放到/opt/文件夹中</p>
-<pre><code>sudo mv nwjs-v0.12.3-linux-x64 /opt/nwjs
-</code></pre><h2 id="添加路径"><a href="#添加路径" class="headerlink" title="添加路径"></a>添加路径</h2><p>创建一个在/etc/profile.d/下创建新的bash文件</p>
-<pre><code>sudo vim /etc/profile.d/nwjs.sh
-</code></pre><p>在里面添加nwjs的路径</p>
-<pre><code>export PATH=$PATH:/opt/nwjs
-</code></pre><h2 id="检测是否成功"><a href="#检测是否成功" class="headerlink" title="检测是否成功"></a>检测是否成功</h2><p>这里你可以在命令行输入nw，如果成功打开nwjs那就成功了，有时我发现有的会报如下错误</p>
-<pre><code>bash: /opt/nwjs/nw: Permission denied
-</code></pre><p>这是因为没有nw的执行文件没有添加可执行属性，执行如下命令即可：</p>
-<pre><code>sudo chmod +x /opt/nwjs/nw
-</code></pre>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -929,24 +950,24 @@ id_rsa  id_rsa.pub
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-count">10</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           
             <div class="site-state-item site-state-categories">
-              <a href="/categories">
+              
                 <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">分类</span>
-              </a>
+              
             </div>
           
 
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -999,7 +1020,7 @@ id_rsa  id_rsa.pub
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
+    NexT.Muse
   </a>
 </div>
 
