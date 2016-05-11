@@ -71,7 +71,7 @@ $ sudo apt-get update$ sudo apt-get install">
 docker的安装
 更新包信息，确保apt能够使用https方法以及安装了CA证书
 $ sudo apt-get update$ sudo apt-get install">
-<meta property="og:updated_time" content="2016-05-06T16:44:16.594Z">
+<meta property="og:updated_time" content="2016-05-11T15:27:12.539Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="初探docker">
 <meta name="twitter:description" content="之前对docker的大名早有耳闻，但一直没有接触，这次趁着课程作业的机会了解了一下docker的工作方式，感觉docker确实非常强大，能够极大的方便生产开发环境的统一部署。这篇文章内容都是出自官方文档，我是勤劳的搬运工。
@@ -284,12 +284,13 @@ $ sudo apt-get update$ sudo apt-get install">
 <li><p>添加新的<code>GPG</code>密钥</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>添加<code>entry</code>到源中</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo touch /etc/apt/sources.list.d/docker.list</span><br><span class="line">$ sudo <span class="built_in">echo</span> `deb https://apt.dockerproject.org/repo ubuntu-xenial main` &gt;&gt; /etc/apt/sources.list.d/docker.list</span><br></pre></td></tr></table></figure>
-<p><strong>注意我这里使用的时ubuntu16.04，其他的版本添加的entry会有不同</strong></p>
+<li><p>添加第三方库到源中</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo add-apt-repository <span class="string">"deb https://apt.dockerproject.org/repo <span class="variable">$(lsb_release -s -c)</span> main"</span></span><br></pre></td></tr></table></figure>
 </li>
+</ol>
+<ol>
 <li><p>更新包信息，如果必要的话，还有清理旧仓库</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get update、</span><br><span class="line">$ sudo apt-get purge lxc-docker</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get purge lxc-docker</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>官网还推荐在安装前安装一些推荐的包（我没去研究他们是干啥的）</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install linux-image-extra-$(uname -r)</span><br></pre></td></tr></table></figure>
